@@ -4,12 +4,12 @@ public class GameField {
 
 	// properties
 	private Token[] gameFields = new Token[40];
-	private Player[] players; 
+	private AbstractPlayer[] players;
 	
 	/**
 	 * Spielfeld-Konstruktor. Es werden lediglich die Spieler benötigt.
 	 */
-	public GameField (Player[] players) {
+	public GameField (AbstractPlayer[] players) {
 		this.players = players;
 	}
 	
@@ -20,8 +20,8 @@ public class GameField {
 	public void getFieldMirror() {
 		this.gameFields = new Token[40];
 		
-		for (Player player : players) {
-			for(Token token : player.getTokens()) {
+		for (AbstractPlayer player : players) {
+			for(Token token : player.tokens) {
 				if(!token.isHome() && !token.isInWinSpot()) {
 					gameFields[token.getPos()] = token;
 				}

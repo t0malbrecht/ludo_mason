@@ -1,16 +1,10 @@
 package game;
 
+import models.AbstractPlayer;
 import models.GameField;
-import models.Player;
+import models.EasyPlayer;
 import sim.app.pacman.*;
 import sim.engine.SimState;
-import sim.field.continuous.Continuous2D;
-import sim.field.grid.IntGrid2D;
-import sim.util.Double2D;
-import sim.util.MutableDouble2D;
-import sim.util.TableLoader;
-
-import java.util.List;
 
 public class Game2 extends SimState
 {
@@ -18,9 +12,9 @@ public class Game2 extends SimState
 
     private int countOfPlayers = 4;
     private int selectedPlayerIndex = 0;
-    private Player[] players = new Player[4];
+    private AbstractPlayer[] players = new EasyPlayer[4];
     private int[] playerLocations = {0, 39, 10, 9, 20, 19, 30, 29};
-    private Player selectedPlayer;
+    private AbstractPlayer selectedPlayer;
     private GameField gameField;
     private int places = 1;
 
@@ -36,36 +30,63 @@ public class Game2 extends SimState
         super(seed);
     }
 
-    /** Resets the scores, loads the maze, creates the fields, adds the dots and energizers, and resets the Pac and Ghosts. */
-    public void start()
-    {
+    @Override
+    public void start() {
         super.start();
 
-        resetAgents();
+        //make sure you understand the different version of the scheduleOnce() und scheduleRepeating() methods (read documentation)
+        //agent order is random if agents with same ordering are called at the same time
+        // add Player1 (Strategy)
+        AbstractPlayer player1 = new EasyPlayer(1,0 );
+        players[0] = player1;
+
+        // add Player2 (Strategy)
+        AbstractPlayer player2 = new EasyPlayer(2,10 );
+        players[1] = player2;
+
+        // add Player3 (Strategy)
+        AbstractPlayer player3 = new EasyPlayer(3,20 );
+        players[2] = player3;
+
+        // add Player4 (Strategy)
+        AbstractPlayer player4 = new EasyPlayer(4,30);
+        players[3] = player4;
+
+        schedule.scheduleRepeating(player1, 0, 1.0);
+        schedule.scheduleRepeating(player2, 1, 1.0);
+        schedule.scheduleRepeating(player3, 2, 1.0);
+        schedule.scheduleRepeating(player4, 3, 1.0);
+    }
+
+    //call finish() to terminate gracefully
+    @Override
+    public void finish() {
+        super.finish();
+        System.out.println("simulation finished");
     }
 
     public void resetAgents()
     {
-        players = new Player[4];
+        players = new EasyPlayer[4];
         schedule.clear();
 
         // make arrays
         actions = new int[] { Agent.NOTHING , Agent.NOTHING };
 
         // add Player1 (Strategy)
-        Player player1 = new Player(1,0 );
+        EasyPlayer player1 = new EasyPlayer(1,0 );
         players[0] = player1;
 
         // add Player2 (Strategy)
-        Player player2 = new Player(2,10 );
+        EasyPlayer player2 = new EasyPlayer(2,10 );
         players[1] = player2;
 
         // add Player3 (Strategy)
-        Player player3 = new Player(3,20 );
+        EasyPlayer player3 = new EasyPlayer(3,20 );
         players[2] = player3;
 
         // add Player4 (Strategy)
-        Player player4 = new Player(4,30);
+        EasyPlayer player4 = new EasyPlayer(4,30);
         players[3] = player4;
 
         resetField();
