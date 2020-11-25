@@ -10,7 +10,26 @@ public class EasyPlayer extends AbstractPlayer{
 	 * @param identifier
 	 * @param startPos
 	 */
-	public EasyPlayer(int identifier, int startPos) {
-		super(identifier, startPos);
+	public EasyPlayer(int identifier, int startPos, GameField gameField) {
+		super(identifier, startPos, gameField);
+	}
+
+	public void turn(){
+		int diceCount = 1;
+		int diceNumber;
+		do {
+			diceNumber = rollDice();
+			if(tokenOnStartspot()){
+				gameField.setTokenToField (getTokenOnStartspot(), diceNumber);
+				return;
+			}
+			ArrayList<Integer>  avaibleOptions = getAvaiableOptions();
+			if(avaibleOptions.contains(0) && diceNumber == 6){
+
+			}
+			diceCount++;
+			// Bedingung um nochmal zu w?rfeln
+		}while(diceNumber == 6 || (tokenAtHome() == 4 - (tokenInWinSpot())&& diceCount != 3));
+
 	}
 }

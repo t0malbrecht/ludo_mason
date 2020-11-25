@@ -2,60 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44491b2e-1d0c-49b2-b229-d7c2889164d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/AbstractPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/EasyPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/TokenAbstract.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/game/Game2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mason_test/game/Game2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/models/GameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mason_test/models/GameField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/models/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Agent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Blinky.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Clyde.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Dot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Energizer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Ghost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Inky.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/MazeCellPortrayal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Overlay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pac$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pac$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pac$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pac$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pac$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pac$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pac$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pac$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pac$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pac.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/PacMan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/PacManWithUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/PacManWithUI$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/PacManWithUI$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/PacManWithUI$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/PacManWithUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/PacPortrayal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mason_test/sim/app/pacman/Pinky.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Blinky.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clyde.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Energizer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ghost.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inky.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MazeCellPortrayal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Overlay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pac.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PacMan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PacManWithUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PacPortrayal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pinky.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TokenAbstract.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Game2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/AbstractPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/EasyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/EasyPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/GameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Token.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +157,7 @@
       <workItem from="1606224959940" duration="1465000" />
       <workItem from="1606226444702" duration="10762000" />
       <workItem from="1606300734391" duration="4148000" />
-      <workItem from="1606321958464" duration="1621000" />
+      <workItem from="1606321958464" duration="6627000" />
     </task>
     <servers />
   </component>
@@ -237,22 +189,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606147306067" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606252032658">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606323588473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606252032658" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606252032658">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606323588473" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606323588473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606252032658" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606252032657">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606323588473" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606323588472">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606252032657" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606252032658">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606323588472" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606323588473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606252032658" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606323588473" />
     <state x="2360" y="100" key="SettingsEditor" timestamp="1606320621365">
       <screen x="1920" y="6" width="1920" height="1040" />
     </state>
@@ -262,6 +214,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606300736885" />
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606324359607">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606324359607" />
     <state x="1920" y="6" width="1409" height="718" key="dock-window-1" timestamp="1606231202088">
       <screen x="1920" y="6" width="1920" height="1040" />
     </state>

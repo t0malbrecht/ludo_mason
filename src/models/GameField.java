@@ -9,7 +9,10 @@ public class GameField {
 	/**
 	 * Spielfeld-Konstruktor. Es werden lediglich die Spieler benötigt.
 	 */
-	public GameField (AbstractPlayer[] players) {
+	public GameField () {
+	}
+
+	public void setPlayers(AbstractPlayer[] players){
 		this.players = players;
 	}
 	

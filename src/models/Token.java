@@ -115,6 +115,8 @@ public class Token {
 	public boolean isHome() {
 		return isHome;
 	}
+
+	public boolean isOnStartspot() { return pos == startPos;}
 	
 	/**
 	 * Gibt an, ob die Spielerfigur sich im Zielhaus befindet.
