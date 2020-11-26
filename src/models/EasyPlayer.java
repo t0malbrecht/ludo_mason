@@ -17,27 +17,36 @@ public class EasyPlayer extends AbstractPlayer{
 	}
 
 	public void turn(){
-		int diceCount = 1;
-		int diceNumber;
-		do {
+		game2.round++;
+		int diceCount = 0;
+		int diceNumber = 0;
+		while(diceNumber == 6 || diceCount < 3){
+			if(game2.end)
+				return;
 			diceNumber = rollDice();
 			if(tokenOnStartspot()){
 				gameField.setTokenToField (getTokenOnStartspot(), diceNumber);
-				return;
+				diceCount++;
+				checkWin();
+				continue;
 			}
-			ArrayList<Integer>  avaibleOptions = getAvaiableOptions();
+			ArrayList<Integer> avaibleOptions = getAvaiableOptions();
 			if(avaibleOptions.contains(0) && diceNumber == 6){ //Pflicht bei 6 raussetzen
 				getTokenAtHome().out();
-				return;
+				diceCount++;
+				checkWin();
+				continue;
 			}
 			if(avaibleOptions.contains(1)){
 				gameField.setTokenToField (getFieldToken(false).get(0), diceNumber);
-				return;
+				diceCount++;
+				checkWin();
+				continue;
 			}
 			diceCount++;
 			checkWin();
 			// Bedingung um nochmal zu w?rfeln
-		}while(diceNumber == 6 || (tokenAtHome() == 4 - (tokenInWinSpot())&& diceCount != 3));
+		}
 
 	}
 }

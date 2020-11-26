@@ -60,7 +60,7 @@ public class GameField {
 			
 			if(i == token.getWinPos()) {
 				limitation = diceNumber - c;
-				System.out.println("Deine Spielefigur ist ins Ziel eingelaufen!");
+				//System.out.println("Deine Spielefigur ist ins Ziel eingelaufen!");
 				token.tokenWin();
 				break;
 			}
@@ -72,7 +72,7 @@ public class GameField {
 			if(gameFields[vFields[i]] != null) {
 				if(gameFields[vFields[i]].getId() != token.getId()) {
 					gameFields[vFields[i]].kick();
-					System.out.print((token.getId() +1) + ". Spieler: Super Du hast eine gegnerische Spielerfigur gekickt!");
+					//System.out.print((token.getId() +1) + ". Spieler: Super Du hast eine gegnerische Spielerfigur gekickt!");
 				}
 			}
 			
@@ -87,14 +87,14 @@ public class GameField {
 		this.getFieldMirror();
 	}
 
-	
-	
+
+
 	/**
 	 * Ausgabe des Spielfelds.
 	 */
 	public void print(int[] locations) {
 		System.out.println();
-	
+
 		for (Token token : gameFields) {
 			if(token != null) {
 				System.out.print(token.getId() + " ");
@@ -102,12 +102,12 @@ public class GameField {
 			else {
 				System.out.print("o ");
 			}
-			
+
 		}
-		
+
 		System.out.println();
 	}
 
-	
+
 
 }

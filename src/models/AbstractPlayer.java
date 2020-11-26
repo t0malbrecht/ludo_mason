@@ -13,8 +13,6 @@ public abstract class AbstractPlayer implements Steppable {
     public int winPos;
     public Token[] tokens = new Token[4];
     public int roundCount;
-    // pseudo-prüfung, ob ein Spieler gewonnen hat
-    public int winningPlace = -1;
     public GameField gameField;
     public Game2 game2;
 
@@ -134,8 +132,9 @@ public abstract class AbstractPlayer implements Steppable {
 
     @Override
     public void step(SimState simState) {
-        turn();
-        System.out.println("Player: "+this.id+" am Zug");
+        if(!game2.end){
+            turn();
+        }
     }
 
     /**
@@ -170,9 +169,9 @@ public abstract class AbstractPlayer implements Steppable {
      * Check Winning Condition
      */
     public void checkWin() {
-        if(tokenInWinSpot() == 4 && winningPlace == -1) {
-            System.out.println("Spieler " + id + " hat gewonnen");
-            game2.finish();
+        if(tokenInWinSpot() == 4) {
+            game2.winsOfPlayer[id] = game2.winsOfPlayer[id]+1;
+            game2.gameFinish();
         }
     }
 

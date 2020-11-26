@@ -22,7 +22,7 @@ public class Token {
 	 */
 	public Token(int id, int startPos, int winPos) {
 		this.id = id;
-		this.pos = 0;
+		this.pos = -2;
 		this.startPos = startPos;
 		this.winPos = winPos;
 		this.isHome = true;
@@ -35,7 +35,7 @@ public class Token {
 		this.pos = -1;
 		hasKickedIndicator++;
 		setHome(true);
-		System.out.println(id + ". Spieler: Deine Figur wurde leider in die Homebase gekickt.");
+		//System.out.println(id + ". Spieler: Deine Figur wurde leider in die Homebase gekickt.");
 	}
 	
 	/**
