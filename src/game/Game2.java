@@ -37,19 +37,19 @@ public class Game2 extends SimState
         //make sure you understand the different version of the scheduleOnce() und scheduleRepeating() methods (read documentation)
         //agent order is random if agents with same ordering are called at the same time
         // add Player1 (Strategy)
-        AbstractPlayer player1 = new EasyPlayer(1,0 , gameField );
+        AbstractPlayer player1 = new EasyPlayer(1,0 , gameField, this);
         players[0] = player1;
 
         // add Player2 (Strategy)
-        AbstractPlayer player2 = new EasyPlayer(2,10, gameField );
+        AbstractPlayer player2 = new EasyPlayer(2,10, gameField, this);
         players[1] = player2;
 
         // add Player3 (Strategy)
-        AbstractPlayer player3 = new EasyPlayer(3,20, gameField );
+        AbstractPlayer player3 = new EasyPlayer(3,20, gameField, this );
         players[2] = player3;
 
         // add Player4 (Strategy)
-        AbstractPlayer player4 = new EasyPlayer(4,30, gameField);
+        AbstractPlayer player4 = new EasyPlayer(4,30, gameField, this);
         players[3] = player4;
         gameField.setPlayers(players);
 
@@ -71,19 +71,6 @@ public class Game2 extends SimState
     {
         doLoop(Game2.class, args);
         System.exit(0);
-    }
-
-
-    /**
-     * Check Winning Condition
-     */
-    private void checkWin() {
-        if(selectedPlayer.tokenInWinSpot() == 4 && selectedPlayer.winningPlace == -1) {
-            System.out.println("Spieler " + selectedPlayer.id + " hat gewonnen und ist auf Platz "+ places + "!");
-            selectedPlayer.winningPlace = places;
-            places++;
-            return;
-        }
     }
 
 }

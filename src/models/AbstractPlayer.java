@@ -1,5 +1,6 @@
 package models;
 
+import game.Game2;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 
@@ -15,15 +16,18 @@ public abstract class AbstractPlayer implements Steppable {
     // pseudo-prüfung, ob ein Spieler gewonnen hat
     public int winningPlace = -1;
     public GameField gameField;
+    public Game2 game2;
 
     /**
      * Spieler-Konstruktor. Spielkennung durch Ganzzahl (1,2,3,4) mit einer berechneten St.
      */
-    public AbstractPlayer (int identifier, int startPos, GameField gameField) {
+    public AbstractPlayer (int identifier, int startPos, GameField gameField, Game2 game2) {
+        this.game2 = game2;
         this.id = identifier;
         this.startPos = startPos;
         this.winPos = (this.startPos -1) < 0 ? 39 : this.startPos -1;
-        this.roundCount = 0;
+        this.roundCount =
+                0;
         this.gameField = gameField;
         this.newTokens();
     }
@@ -49,7 +53,7 @@ public abstract class AbstractPlayer implements Steppable {
         if(tokenAtHome() > 0){
             result.add(0);
         }
-        if(getFieldTokenIds(false).size() > 0){
+        if(getFieldToken(false).size() > 0){
             //No FieldToken Avaible
             result.add(1);
         }
@@ -80,6 +84,21 @@ public abstract class AbstractPlayer implements Steppable {
             count = count + (token.isHome() ? 1 : 0);
         }
         return count;
+    }
+
+
+    /**
+     * Gibt einen Home-Token zurück
+     * @return Anzahl der Figuren.
+     */
+    public Token getTokenAtHome() {
+        int count = 0;
+        for (Token token : tokens) {
+            if(token.isHome()){
+                return token;
+            }
+        }
+        return null;
     }
 
     /**
@@ -135,16 +154,26 @@ public abstract class AbstractPlayer implements Steppable {
      * Prüft, welche Spielfiguren überhaupt bewegt werden dürfen.
      * @return Array der Ids.
      */
-    public ArrayList<Integer> getFieldTokenIds(boolean withHomeTokens) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
+    public ArrayList<Token> getFieldToken(boolean withHomeTokens) {
+        ArrayList<Token> result = new ArrayList<Token>();
         for(int i = 0; i < tokens.length; i++) {
             if(!tokens[i].isInWinSpot() && (!tokens[i].isHome() || withHomeTokens)) {
-                result.add(i);
+                result.add(tokens[i]);
             }
 
         }
 
         return result;
+    }
+
+    /**
+     * Check Winning Condition
+     */
+    public void checkWin() {
+        if(tokenInWinSpot() == 4 && winningPlace == -1) {
+            System.out.println("Spieler " + id + " hat gewonnen");
+            game2.finish();
+        }
     }
 
     //_________________________________________________________________

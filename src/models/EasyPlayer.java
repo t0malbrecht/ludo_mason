@@ -1,5 +1,7 @@
 package models;
 
+import game.Game2;
+
 import java.util.ArrayList;
 
 public class EasyPlayer extends AbstractPlayer{
@@ -10,8 +12,8 @@ public class EasyPlayer extends AbstractPlayer{
 	 * @param identifier
 	 * @param startPos
 	 */
-	public EasyPlayer(int identifier, int startPos, GameField gameField) {
-		super(identifier, startPos, gameField);
+	public EasyPlayer(int identifier, int startPos, GameField gameField, Game2 game2) {
+		super(identifier, startPos, gameField, game2);
 	}
 
 	public void turn(){
@@ -24,10 +26,16 @@ public class EasyPlayer extends AbstractPlayer{
 				return;
 			}
 			ArrayList<Integer>  avaibleOptions = getAvaiableOptions();
-			if(avaibleOptions.contains(0) && diceNumber == 6){
-
+			if(avaibleOptions.contains(0) && diceNumber == 6){ //Pflicht bei 6 raussetzen
+				getTokenAtHome().out();
+				return;
+			}
+			if(avaibleOptions.contains(1)){
+				gameField.setTokenToField (getFieldToken(false).get(0), diceNumber);
+				return;
 			}
 			diceCount++;
+			checkWin();
 			// Bedingung um nochmal zu w?rfeln
 		}while(diceNumber == 6 || (tokenAtHome() == 4 - (tokenInWinSpot())&& diceCount != 3));
 
