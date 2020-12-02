@@ -6,9 +6,13 @@ public class Token {
 	private final int id;
 	private final int startPos;
 	private final int winPos;
-	private int pos;
+	private Integer pos;
 	private boolean isHome;
 	private boolean inWinSpot;
+	public AbstractPlayer player;
+	public int stepsToEnemy;
+	public Integer stepsToWinBase;
+	public Integer canGoInWinBaseWith;
 	// stats
 	private int kickIndicator = 0;
 	private int outIndicator = 0;
@@ -20,22 +24,25 @@ public class Token {
 	 * @param startPos: Startposition einer Spielerfigur
 	 * @param winPos: Gewinnposition einer Spielerfigur
 	 */
-	public Token(int id, int startPos, int winPos) {
+	public Token(int id, int startPos, int winPos, AbstractPlayer player) {
 		this.id = id;
 		this.pos = -2;
 		this.startPos = startPos;
 		this.winPos = winPos;
 		this.isHome = true;
+		this.player = player;
+		this.canGoInWinBaseWith = 0;
 	}
 	
 	/**
 	 * Wird vom Spielfeld entfernt.
 	 */
-	public void kick() {
+	public void kick(Token token) {
 		this.pos = -1;
 		hasKickedIndicator++;
 		setHome(true);
-		//System.out.println(id + ". Spieler: Deine Figur wurde leider in die Homebase gekickt.");
+		player.game2.stats.KicksGotten[id]++;
+		player.game2.stats.KicksMade[token.player.id]++;
 	}
 	
 	/**
@@ -44,6 +51,7 @@ public class Token {
 	public void out() {
 		outIndicator++;
 		setHome(false);
+		//System.out.println("Startpos:"+startPos+"_Player:"+player.id);
 		updatePos(startPos);
 	}
 	
@@ -51,8 +59,12 @@ public class Token {
 	 * Spielfigur läuft in das Ziel ein.
 	 */
 	public void tokenWin() {
+		//System.out.println("Player: "+player.id+" | Token im Ziel");
 		this.inWinSpot = true;
+		this.canGoInWinBaseWith = 0;
 		this.updatePos(-1);
+		this.player.checkWin();
+		player.game2.stats.TokensSetToWin[id]++;
 	}
 	
 	/**
@@ -83,7 +95,15 @@ public class Token {
 	 * Liefert die aktuelle Position der Spielfigur.
 	 * @return: Aktuelle Position
 	 */
-	public int getPos () {
+	public Integer getPos () {
+		return pos;
+	}
+
+	/**
+	 * Liefert die aktuelle Entfernung der Spielfigur zur Winbasis.
+	 * @return: Aktuelle Position
+	 */
+	public Integer getStepsToWinBase () {
 		return pos;
 	}
 	
@@ -125,6 +145,6 @@ public class Token {
 	public boolean isInWinSpot() {
 		return inWinSpot;
 	}
-	
-	
+
+
 }

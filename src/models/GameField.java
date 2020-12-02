@@ -31,7 +31,11 @@ public class GameField {
 			}
 		}
 	}
-	
+
+	public void setInWinBase(Token token, int diceNumber){
+		token.player.freeWinSpots.remove(Integer.valueOf(diceNumber-token.stepsToWinBase));
+		token.tokenWin();
+	}
 	/**
 	 * Bewegen der Spielerfiguren auf ein gespiegeltes Spielfeld.
 	 */
@@ -56,22 +60,25 @@ public class GameField {
 				oldPos = c * (-1);
 				
 			}
-			vFields[c] = i; 
-			
-			if(i == token.getWinPos()) {
+			vFields[c] = i;
+
+			/**if(i == token.getWinPos()) {
 				limitation = diceNumber - c;
 				//System.out.println("Deine Spielefigur ist ins Ziel eingelaufen!");
 				token.tokenWin();
 				break;
-			}
+			}**/
 			c++;
 		}
 		
+
 		// differenz zwischen alter und neuer position
+		//System.out.println("----------------------");
 		for(int i = 0; i < limitation; i++) {
+			//System.out.println("TokenFeld:"+vFields[i]);
 			if(gameFields[vFields[i]] != null) {
 				if(gameFields[vFields[i]].getId() != token.getId()) {
-					gameFields[vFields[i]].kick();
+				gameFields[vFields[i]].kick(token);
 					//System.out.print((token.getId() +1) + ". Spieler: Super Du hast eine gegnerische Spielerfigur gekickt!");
 				}
 			}

@@ -1,10 +1,14 @@
 package game;
 
+import ec.util.MersenneTwisterFast;
 import models.AbstractPlayer;
 import models.GameField;
 import models.EasyPlayer;
+import models.Stats;
 import sim.engine.IterativeRepeat;
 import sim.engine.SimState;
+
+import java.util.ArrayList;
 
 public class Game2 extends SimState
 {
@@ -20,6 +24,8 @@ public class Game2 extends SimState
     private GameField gameField;
     private int places = 1;
     public boolean end = false;
+    public MersenneTwisterFast generator;
+    public Stats stats;
 
     IterativeRepeat player1stoppable;
     IterativeRepeat player2stoppable;
@@ -36,6 +42,9 @@ public class Game2 extends SimState
     public Game2(long seed)
     {
         super(seed);
+        this.generator = new MersenneTwisterFast(seed);
+        stats = new Stats();
+
     }
 
     public void resetGame(){
@@ -66,8 +75,9 @@ public class Game2 extends SimState
             players[3] = player4;
             gameField.setPlayers(players);
 
+
             player1stoppable = schedule.scheduleRepeating(player1, 0, 1.0);
-            player2stoppable = schedule.scheduleRepeating(player2, 1, 1.0);
+            player2stoppable = schedule.scheduleRepeating(player2, 1,1.0);
             player3stoppable = schedule.scheduleRepeating(player3, 2, 1.0);
             player4stoppable = schedule.scheduleRepeating(player4, 3, 1.0);
 
@@ -80,12 +90,8 @@ public class Game2 extends SimState
         this.end = true;
         this.finish();
         gameCounter++;
-        player1stoppable.stop();
-        player2stoppable.stop();
-        player3stoppable.stop();
-        player4stoppable.stop();
         schedule.clear();
-        if(gameCounter < 1000000)
+        if(gameCounter < 10000)
             start();
         else
             this.printStats();
@@ -98,11 +104,15 @@ public class Game2 extends SimState
     }
 
     public void printStats(){
-        System.out.println("Roundlength = "+this.round/4/1000000);
+        System.out.println("Roundlength = "+this.round/4/10000);
         System.out.println("Player 1:"+this.winsOfPlayer[0]+" Wins");
-        System.out.println("Player 3:"+this.winsOfPlayer[1]+" Wins");
-        System.out.println("Player 2:"+this.winsOfPlayer[2]+" Wins");
+        System.out.println("Player 1_KicksGotten:"+this.stats.KicksGotten[0]+" KicksMade:"+this.stats.KicksMade[0]+" TokenSetToWin:"+this.stats.TokensSetToWin[0]);
+        System.out.println("Player 2:"+this.winsOfPlayer[1]+" Wins");
+        System.out.println("Player 2_KicksGotten:"+this.stats.KicksGotten[1]+" KicksMade:"+this.stats.KicksMade[1]+" TokenSetToWin:"+this.stats.TokensSetToWin[1]);
+        System.out.println("Player 3:"+this.winsOfPlayer[2]+" Wins");
+        System.out.println("Player 3_KicksGotten:"+this.stats.KicksGotten[2]+" KicksMade:"+this.stats.KicksMade[2]+" TokenSetToWin:"+this.stats.TokensSetToWin[2]);
         System.out.println("Player 4:"+this.winsOfPlayer[3]+" Wins");
+        System.out.println("Player 4_KicksGotten:"+this.stats.KicksGotten[3]+" KicksMade:"+this.stats.KicksMade[3]+" TokenSetToWin:"+this.stats.TokensSetToWin[3]);
     }
 
 
