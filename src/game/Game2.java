@@ -53,33 +53,43 @@ public class Game2 extends SimState
 
     @Override
     public void start() {
-        super.start();
+        for(int i=0;i<100000; i++) {
+            //super.start();
             resetGame();
             GameField gameField = new GameField();
             //make sure you understand the different version of the scheduleOnce() und scheduleRepeating() methods (read documentation)
             //agent order is random if agents with same ordering are called at the same time
             // add Player1 (Strategy)
-            AbstractPlayer player1 = new EasyPlayer(0, 0, gameField, this);
+            AbstractPlayer player1 = new EasyPlayer(0, 30, gameField, this);
             players[0] = player1;
 
             // add Player2 (Strategy)
-            AbstractPlayer player2 = new EasyPlayer(1, 10, gameField, this);
+            AbstractPlayer player2 = new EasyPlayer(1, 0, gameField, this);
             players[1] = player2;
 
             // add Player3 (Strategy)
-            AbstractPlayer player3 = new EasyPlayer(2, 20, gameField, this);
+            AbstractPlayer player3 = new EasyPlayer(2, 10, gameField, this);
             players[2] = player3;
 
             // add Player4 (Strategy)
-            AbstractPlayer player4 = new EasyPlayer(3, 30, gameField, this);
+            AbstractPlayer player4 = new EasyPlayer(3, 20, gameField, this);
             players[3] = player4;
             gameField.setPlayers(players);
 
+            while (!end) {
+                player1.turn();
+                player2.turn();
+                player3.turn();
+                player4.turn();
+            }
+        }
+        printStats();
 
-            player1stoppable = schedule.scheduleRepeating(player1, 0, 1.0);
-            player2stoppable = schedule.scheduleRepeating(player2, 1,1.0);
-            player3stoppable = schedule.scheduleRepeating(player3, 2, 1.0);
-            player4stoppable = schedule.scheduleRepeating(player4, 3, 1.0);
+
+            //player1stoppable = schedule.scheduleRepeating(player1, 0, 1.0);
+            //player2stoppable = schedule.scheduleRepeating(player2, 1,1.0);
+            //player3stoppable = schedule.scheduleRepeating(player3, 2, 1.0);
+            //player4stoppable = schedule.scheduleRepeating(player4, 3, 1.0);
 
             /**schedule.scheduleOnce(player1, 0);
             schedule.scheduleOnce(player2, 1);
@@ -88,13 +98,9 @@ public class Game2 extends SimState
     }
     public void gameFinish(){
         this.end = true;
-        this.finish();
-        gameCounter++;
-        schedule.clear();
-        if(gameCounter < 10000)
-            start();
-        else
-            this.printStats();
+        //this.finish();
+        //gameCounter++;
+        //schedule.clear();
     }
 
     //call finish() to terminate gracefully
@@ -118,8 +124,9 @@ public class Game2 extends SimState
 
     public static void main(String[] args)
     {
-        doLoop(Game2.class, args);
-        System.exit(0);
+        new Game2((long) 165165465).start();
+        //doLoop(Game2.class, args);
+        //System.exit(0);
     }
 
 }

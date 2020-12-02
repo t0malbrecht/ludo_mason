@@ -20,12 +20,12 @@ public abstract class AbstractPlayer implements Steppable {
     public ArrayList<Token> avaibleTokes;
 
     public void printTokenPosition() {
-         System.out.print("Player: "+id+" | ");
+         /**System.out.print("Player: "+id+" | ");
          System.out.print("inHomeBase: "+tokenAtHome()+" | ");
          for (Token token: getFieldToken(false)) {
          System.out.print("Token: "+token.getPos()+" | ");
          }
-         System.out.println("-");
+         System.out.println("-");**/
     }
 
     /**

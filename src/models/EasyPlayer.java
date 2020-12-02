@@ -19,11 +19,12 @@ public class EasyPlayer extends AbstractPlayer{
 	}
 
 	public void turn(){
+		game2.stats.TokensSetToWin[id]++;
 		printTokenPosition();
 		game2.round++;
 		int diceCount = 0;
 		int diceNumber = 0;
-		while(diceNumber == 6 || diceCount < 3){
+		do {
 			if(game2.end)
 				return;
 			diceNumber = rollDice();
@@ -64,7 +65,7 @@ public class EasyPlayer extends AbstractPlayer{
 			}
 			diceCount++;
 			// Bedingung um nochmal zu w?rfeln
-		}
+		}while(diceNumber == 6 || (this.tokenAtHome() == (4 - this.tokenInWinSpot()) && diceCount < 3));
 
 		printTokenPosition();
 	}

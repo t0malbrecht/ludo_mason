@@ -34,7 +34,7 @@ public class GameField {
 
 	public void setInWinBase(Token token, int diceNumber){
 		int oldPos = token.getPos();
-		System.out.println("WIN | Player: "+token.player.id+"Von: "+oldPos+" Mit "+(diceNumber-token.stepsToWinBase));
+		//System.out.println("WIN | Player: "+token.player.id+"Von: "+oldPos+" Mit "+(diceNumber-token.stepsToWinBase));
 		gameFields[oldPos] = null;
 		token.player.freeWinSpots.remove(Integer.valueOf(diceNumber-token.stepsToWinBase));
 		token.tokenWin();
@@ -67,8 +67,7 @@ public class GameField {
 		if (newPos > 39) {
 			newPos = newPos - 39;
 		}
-		System.out.println("Player: "+token.player.id+" Von: "+oldPos+" Zu "+newPos);
-
+		//System.out.println("Player: "+token.player.id+" Von: "+oldPos+" Zu "+newPos);
 		if (gameFields[newPos] != null) {
 				gameFields[newPos].kick(token);
 		}

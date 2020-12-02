@@ -59,7 +59,6 @@ public class Token {
 		this.canGoInWinBaseWith = 0;
 		this.updatePos(-1);
 		this.player.checkWin();
-		player.game2.stats.TokensSetToWin[id]++;
 	}
 	
 	/**
