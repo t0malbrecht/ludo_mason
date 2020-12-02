@@ -45,7 +45,7 @@ public class GameField {
 		int newPos = oldPos + diceNumber;
 		// von der letzten position auf die erste
 		if (newPos > 39) {
-			newPos = newPos - 39;
+			newPos = newPos - 40;
 		}
 
 		if(gameFields[newPos] != null) {
@@ -65,7 +65,7 @@ public class GameField {
 		int newPos = oldPos + diceNumber;
 		// von der letzten position auf die erste
 		if (newPos > 39) {
-			newPos = newPos - 39;
+			newPos = newPos - 40;
 		}
 		//System.out.println("Player: "+token.player.id+" Von: "+oldPos+" Zu "+newPos);
 		if (gameFields[newPos] != null) {
@@ -74,7 +74,7 @@ public class GameField {
 		gameFields[oldPos] = null;
 		gameFields[newPos] = token;
 		token.updatePos(newPos);
-		
+
 		// neues Feld generieren.
 		this.getFieldMirror();
 	}
