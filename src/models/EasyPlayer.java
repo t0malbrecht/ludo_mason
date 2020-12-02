@@ -32,7 +32,6 @@ public class EasyPlayer extends AbstractPlayer{
 				diceCount++;
 				continue;
 			}
-			setDistances(diceNumber);
 			ArrayList<Integer> avaibleOptions = getAvaiableOptions(diceNumber);
 			if(avaibleOptions.contains(0) && diceNumber == 6){ //Pflicht bei 6 raussetzen
 				getTokenAtHome().out();
@@ -52,13 +51,13 @@ public class EasyPlayer extends AbstractPlayer{
 				continue;
 			}
 			if(avaibleOptions.contains(1)){
-				ArrayList<Token> sortedTokens = new ArrayList<>(getFieldToken(false));
+				ArrayList<Token> sortedTokens = avaibleTokes;
 				int finalDiceNumber1 = diceNumber;
 				sortedTokens.removeIf(obj -> obj.stepsToWinBase - finalDiceNumber1 < 0);
 				Collections.sort(sortedTokens,
 						Comparator.comparing(Token::getStepsToWinBase));
-				if(sortedTokens.size() > 0){
-					gameField.setTokenToField (sortedTokens.get(0), diceNumber);
+				if(sortedTokens.size() > 0 && gameField != null){
+					gameField.setTokenToField(sortedTokens.get(0), diceNumber);
 				}
 				diceCount++;
 				continue;
@@ -66,6 +65,7 @@ public class EasyPlayer extends AbstractPlayer{
 			diceCount++;
 			// Bedingung um nochmal zu w?rfeln
 		}
+
 		printTokenPosition();
 	}
 }

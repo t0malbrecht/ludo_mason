@@ -13,10 +13,7 @@ public class Token {
 	public int stepsToEnemy;
 	public Integer stepsToWinBase;
 	public Integer canGoInWinBaseWith;
-	// stats
-	private int kickIndicator = 0;
-	private int outIndicator = 0;
-	private int hasKickedIndicator = 0;
+
 	
 	/**
 	 * Konstruktor einer Spielerfigur.
@@ -39,7 +36,6 @@ public class Token {
 	 */
 	public void kick(Token token) {
 		this.pos = -1;
-		hasKickedIndicator++;
 		setHome(true);
 		player.game2.stats.KicksGotten[id]++;
 		player.game2.stats.KicksMade[token.player.id]++;
@@ -49,7 +45,6 @@ public class Token {
 	 * Wird auf das Spielfeld gesetzt.
 	 */
 	public void out() {
-		outIndicator++;
 		setHome(false);
 		//System.out.println("Startpos:"+startPos+"_Player:"+player.id);
 		updatePos(startPos);
@@ -104,7 +99,7 @@ public class Token {
 	 * @return: Aktuelle Position
 	 */
 	public Integer getStepsToWinBase () {
-		return pos;
+		return stepsToWinBase;
 	}
 	
 	/**

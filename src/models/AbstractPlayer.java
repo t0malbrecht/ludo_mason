@@ -17,30 +17,25 @@ public abstract class AbstractPlayer implements Steppable {
     public int roundCount;
     public GameField gameField;
     public Game2 game2;
+    public ArrayList<Token> avaibleTokes;
 
-    public void printTokenPosition(){
-        /**System.out.print("Player: "+id+" | ");
-        System.out.print("inHomeBase: "+tokenAtHome()+" | ");
-        for (Token token: getFieldToken(false)) {
-            System.out.print("Token: "+token.getPos()+" | ");
-        }
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("-");
-         **/
+    public void printTokenPosition() {
+         System.out.print("Player: "+id+" | ");
+         System.out.print("inHomeBase: "+tokenAtHome()+" | ");
+         for (Token token: getFieldToken(false)) {
+         System.out.print("Token: "+token.getPos()+" | ");
+         }
+         System.out.println("-");
     }
 
     /**
      * Spieler-Konstruktor. Spielkennung durch Ganzzahl (1,2,3,4) mit einer berechneten St.
      */
-    public AbstractPlayer (int identifier, int startPos, GameField gameField, Game2 game2) {
+    public AbstractPlayer(int identifier, int startPos, GameField gameField, Game2 game2) {
         this.game2 = game2;
         this.id = identifier;
         this.startPos = startPos;
-        this.winPos = (this.startPos -1) < 0 ? 39 : this.startPos -1;
+        this.winPos = (this.startPos - 1) < 0 ? 39 : this.startPos - 1;
         this.roundCount = 0;
         this.gameField = gameField;
         this.newTokens();
@@ -50,8 +45,8 @@ public abstract class AbstractPlayer implements Steppable {
         freeWinSpots.add(4);
     }
 
-    public int rollDice(){
-        return game2.generator.nextInt(6)+1;
+    public int rollDice() {
+        return game2.generator.nextInt(6) + 1;
     }
 
     //Options:
@@ -63,71 +58,74 @@ public abstract class AbstractPlayer implements Steppable {
      * Regel?
      * - Muss Startfeld freigemacht werden? Müssen alle Startfelder freigemacht haben oder nur das eigene
      * - Wenn 6 gewürfelt wurde, muss Token auf Spielfeld gesetzt werden oder nicht? (Also kann die 6 auch für Token auf dem Feld verwendet werden,
-     *   obwohl er noch Figuren im Starthaus hat?
+     * obwohl er noch Figuren im Starthaus hat?
      */
-
-    public ArrayList<Integer> getAvaiableOptions(int diceNumber){
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        if(tokenAtHome() > 0){
-            result.add(0);
-        }
-        if(getFieldToken(false).size() > 0){
-            result.add(1);
-        }
-        if(getFieldToken(false).size() > 0){
-            if(getFieldToken(false).stream().anyMatch(o -> o.canGoInWinBaseWith == diceNumber))
-                result.add(2);
-        }
-        return result;
-    }
 
     //Kann Token anderen Token schlagen
     //Kann Token in Winbasis einlaufen
     //Kann Token
-    public void setDistances(int diceNumber){
-        int i = 0;
-        for (Token token: tokens) {
+    public ArrayList<Integer> getAvaiableOptions(int diceNumber) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        avaibleTokes = new ArrayList<>();
+        for (Token token : tokens) {
             token.canGoInWinBaseWith = 0;
-            if(token.isHome() || token.isInWinSpot()){
+            if (token.isHome()) {
+                result.add(0);
                 continue;
-            }else{
-                if (token.getWinPos() == token.getPos()) {
-                    token.stepsToWinBase = 0;
+            } else if (token.isInWinSpot()) {
+                continue;
+            } else {
+                if (gameField.isAnotherTokenFromSamePlayerOnSpot(token, diceNumber)) {
+                    continue;
                 } else {
-                    if (token.getPos() < token.getWinPos()) {
-                        token.stepsToWinBase = token.getWinPos() - token.getPos();
+                    if (token.getWinPos() == token.getPos()) {
+                        token.stepsToWinBase = 0;
                     } else {
-                        token.stepsToWinBase = 40 - token.getPos() + token.getWinPos();
+                        if (token.getPos() < token.getWinPos()) {
+                            token.stepsToWinBase = token.getWinPos() - token.getPos();
+                        } else {
+                            token.stepsToWinBase = 40 - token.getPos() + token.getWinPos();
+                        }
                     }
-                }
-                if(token.stepsToWinBase<diceNumber){
-                    for (Integer freeWinSpot: freeWinSpots) {
-                        if(diceNumber-token.stepsToWinBase == freeWinSpot)
-                            //System.out.println("Player:"+id+"Steps:"+token.stepsToWinBase);
-                            token.canGoInWinBaseWith = diceNumber;
+                    if (token.stepsToWinBase < diceNumber) {
+                        for (Integer freeWinSpot : freeWinSpots) {
+                            if (diceNumber - token.stepsToWinBase == freeWinSpot){
+                                //System.out.println("Player:"+id+"Steps:"+token.stepsToWinBase);
+                                token.canGoInWinBaseWith = diceNumber;
+                                result.add(2);
+                            }else{
+                                avaibleTokes.add(token);
+                                result.add(1);
+                            }
+                        }
+                    } else {
+                        avaibleTokes.add(token);
+                        result.add(1);
                     }
+                    //System.out.println("Player:"+id+"Pos:"+token.getPos()+" WinPos:"+ token.getWinPos()+" stepsToWinBase:"+token.stepsToWinBase);
+                    //TODO: Implement stepsToEnemyToken
                 }
-                //System.out.println("Player:"+id+"Pos:"+token.getPos()+" WinPos:"+ token.getWinPos()+" stepsToWinBase:"+token.stepsToWinBase);
-                //TODO: Implement stepsToEnemyToken
             }
         }
+        return result;
     }
 
-    public abstract void turn();
 
+    public abstract void turn();
 
 
     /**
      * Generiert alle Spielerfiguren.
      */
     private void newTokens() {
-        for(int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             tokens.add(new Token(id, startPos, winPos, this));
         }
     }
 
     /**
      * Prüft, wie viele Figuren im Starthaus sind.
+     *
      * @return Anzahl der Figuren.
      */
     public int tokenAtHome() {
@@ -141,12 +139,13 @@ public abstract class AbstractPlayer implements Steppable {
 
     /**
      * Gibt einen Home-Token zurück
+     *
      * @return Anzahl der Figuren.
      */
     public Token getTokenAtHome() {
         int count = 0;
         for (Token token : tokens) {
-            if(token.isHome()){
+            if (token.isHome()) {
                 return token;
             }
         }
@@ -155,11 +154,12 @@ public abstract class AbstractPlayer implements Steppable {
 
     /**
      * Prüft, ob eigene Figur auf eigenem Startplatz ist
+     *
      * @return Anzahl der Figuren.
      */
     public boolean tokenOnStartspot() {
         for (Token token : tokens) {
-            if(token.isOnStartspot()){
+            if (token.isOnStartspot()) {
                 return true;
             }
         }
@@ -168,7 +168,7 @@ public abstract class AbstractPlayer implements Steppable {
 
     public Token getTokenOnStartspot() {
         for (Token token : tokens) {
-            if(token.isOnStartspot()){
+            if (token.isOnStartspot()) {
                 return token;
             }
         }
@@ -186,13 +186,14 @@ public abstract class AbstractPlayer implements Steppable {
 
     @Override
     public void step(SimState simState) {
-        if(!game2.end){
+        if (!game2.end) {
             turn();
         }
     }
 
     /**
      * Prüft, wie viele Figuren im Zielhaus sind.
+     *
      * @return Anzahl der Figuren.
      */
     public int tokenInWinSpot() {
@@ -205,12 +206,13 @@ public abstract class AbstractPlayer implements Steppable {
 
     /**
      * Prüft, welche Spielfiguren überhaupt bewegt werden dürfen.
+     *
      * @return Array der Ids.
      */
     public ArrayList<Token> getFieldToken(boolean withHomeTokens) {
         ArrayList<Token> result = new ArrayList<Token>();
-        for(int i = 0; i < tokens.size(); i++) {
-            if(!tokens.get(i).isInWinSpot() && (!tokens.get(i).isHome() || withHomeTokens)) {
+        for (int i = 0; i < tokens.size(); i++) {
+            if (!tokens.get(i).isInWinSpot() && (!tokens.get(i).isHome() || withHomeTokens)) {
                 result.add(tokens.get(i));
             }
 
@@ -223,8 +225,8 @@ public abstract class AbstractPlayer implements Steppable {
      * Check Winning Condition
      */
     public void checkWin() {
-        if(tokenInWinSpot() == 4) {
-            game2.winsOfPlayer[id] = game2.winsOfPlayer[id]+1;
+        if (tokenInWinSpot() == 4) {
+            game2.winsOfPlayer[id]++;
             game2.gameFinish();
         }
     }
@@ -234,11 +236,12 @@ public abstract class AbstractPlayer implements Steppable {
     /**
      * Gibt einen "Home"-Token (Spielerfigur) zurück.
      * Setzt in diesem Zuge alle relevanten Informationen.
+     *
      * @return
      */
     public Token getHomeToken() {
         for (Token token : tokens) {
-            if(token.isHome()) {
+            if (token.isHome()) {
                 token.setHome(false);
                 return token;
             }

@@ -3,7 +3,7 @@ package models;
 public class GameField {
 
 	// properties
-	private Token[] gameFields = new Token[40];
+	public Token[] gameFields = new Token[40];
 	private AbstractPlayer[] players;
 	
 	/**
@@ -33,62 +33,48 @@ public class GameField {
 	}
 
 	public void setInWinBase(Token token, int diceNumber){
+		int oldPos = token.getPos();
+		System.out.println("WIN | Player: "+token.player.id+"Von: "+oldPos+" Mit "+(diceNumber-token.stepsToWinBase));
+		gameFields[oldPos] = null;
 		token.player.freeWinSpots.remove(Integer.valueOf(diceNumber-token.stepsToWinBase));
 		token.tokenWin();
 	}
-	/**
-	 * Bewegen der Spielerfiguren auf ein gespiegeltes Spielfeld.
-	 */
-	public void setTokenToField (Token token, int diceNumber) {
-		// deklaration
+
+	public boolean isAnotherTokenFromSamePlayerOnSpot(Token token, int diceNumber){
 		int oldPos = token.getPos();
 		int newPos = oldPos + diceNumber;
-		
 		// von der letzten position auf die erste
 		if (newPos > 39) {
 			newPos = newPos - 39;
 		}
-		
-		// aufzeichnung von allen besuchten positionen
-		int[] vFields = new int[diceNumber+1];
-		int limitation = diceNumber+1;
-		int c = 0;
-		for(int i = oldPos; i <= oldPos + diceNumber; i++) {
-			if (i > 39) {
-				vFields[c] = (i - 39);
-				i = 0;
-				oldPos = c * (-1);
-				
-			}
-			vFields[c] = i;
 
-			/**if(i == token.getWinPos()) {
-				limitation = diceNumber - c;
-				//System.out.println("Deine Spielefigur ist ins Ziel eingelaufen!");
-				token.tokenWin();
-				break;
-			}**/
-			c++;
-		}
-		
-
-		// differenz zwischen alter und neuer position
-		//System.out.println("----------------------");
-		for(int i = 0; i < limitation; i++) {
-			//System.out.println("TokenFeld:"+vFields[i]);
-			if(gameFields[vFields[i]] != null) {
-				if(gameFields[vFields[i]].getId() != token.getId()) {
-				gameFields[vFields[i]].kick(token);
-					//System.out.print((token.getId() +1) + ". Spieler: Super Du hast eine gegnerische Spielerfigur gekickt!");
-				}
-			}
-			
-			
-			if(i == vFields.length -1) {
-				gameFields[vFields[i]] = token;
-				token.updatePos(vFields[i]);
+		if(gameFields[newPos] != null) {
+			if (gameFields[newPos].player.id == token.player.id) {
+				return true;
 			}
 		}
+		return false;
+		}
+
+	/**
+	 * Bewegen der Spielerfiguren auf ein gespiegeltes Spielfeld.
+	 */
+	public void setTokenToField(Token token, int diceNumber) {
+		// deklaration
+		int oldPos = token.getPos();
+		int newPos = oldPos + diceNumber;
+		// von der letzten position auf die erste
+		if (newPos > 39) {
+			newPos = newPos - 39;
+		}
+		System.out.println("Player: "+token.player.id+" Von: "+oldPos+" Zu "+newPos);
+
+		if (gameFields[newPos] != null) {
+				gameFields[newPos].kick(token);
+		}
+		gameFields[oldPos] = null;
+		gameFields[newPos] = token;
+		token.updatePos(newPos);
 		
 		// neues Feld generieren.
 		this.getFieldMirror();
