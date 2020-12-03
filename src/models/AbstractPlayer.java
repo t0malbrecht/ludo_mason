@@ -13,11 +13,12 @@ public abstract class AbstractPlayer implements Steppable {
     public int startPos;
     public int winPos;
     public ArrayList<Token> tokens = new ArrayList<>();
-    public ArrayList<Integer> freeWinSpots = new ArrayList<>();
+    public Token[] winSpots;
     public int roundCount;
     public GameField gameField;
     public Game2 game2;
     public ArrayList<Token> avaibleTokes;
+    public ArrayList<Token> avaibleTokensMoveWinBase;
 
     public void printTokenPosition() {
          /**System.out.print("Player: "+id+" | ");
@@ -26,6 +27,7 @@ public abstract class AbstractPlayer implements Steppable {
          System.out.print("Token: "+token.getPos()+" | ");
          }
          System.out.println("-");**/
+
     }
 
     /**
@@ -39,10 +41,7 @@ public abstract class AbstractPlayer implements Steppable {
         this.roundCount = 0;
         this.gameField = gameField;
         this.newTokens();
-        freeWinSpots.add(1);
-        freeWinSpots.add(2);
-        freeWinSpots.add(3);
-        freeWinSpots.add(4);
+        this.winSpots = new Token[4];
     }
 
     public int rollDice() {
@@ -67,13 +66,21 @@ public abstract class AbstractPlayer implements Steppable {
     public ArrayList<Integer> getAvaiableOptions(int diceNumber) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         avaibleTokes = new ArrayList<>();
+        avaibleTokensMoveWinBase = new ArrayList<>();
         for (Token token : tokens) {
             token.canGoInWinBaseWith = 0;
             if (token.isHome()) {
                 result.add(0);
                 continue;
             } else if (token.isInWinSpot()) {
-                continue;
+                    for(int i=0;i<4;i++){
+                        if(winSpots[i] == token){
+                            if(i+diceNumber <3 && winSpots[i+diceNumber] == null){
+                                result.add(3);
+                                avaibleTokensMoveWinBase.add(token);
+                            }
+                        }
+                    }
             } else {
                 if (gameField.isAnotherTokenFromSamePlayerOnSpot(token, diceNumber)) {
                     continue;
@@ -88,15 +95,19 @@ public abstract class AbstractPlayer implements Steppable {
                         }
                     }
                     if (token.stepsToWinBase < diceNumber) {
-                        for (Integer freeWinSpot : freeWinSpots) {
-                            if (diceNumber - token.stepsToWinBase == freeWinSpot){
-                                //System.out.println("Player:"+id+"Steps:"+token.stepsToWinBase);
-                                token.canGoInWinBaseWith = diceNumber;
-                                result.add(2);
-                            }else{
-                                avaibleTokes.add(token);
-                                result.add(1);
+                        int pos = 1;
+                        for (Token winSpot : winSpots) {
+                            if (winSpot == null) {
+                                if (diceNumber - token.stepsToWinBase == pos) {
+                                    //System.out.println("Player:"+id+"Steps:"+token.stepsToWinBase);
+                                    token.canGoInWinBaseWith = diceNumber;
+                                    result.add(2);
+                                } else {
+                                    avaibleTokes.add(token);
+                                    result.add(1);
+                                }
                             }
+                            pos++;
                         }
                     } else {
                         avaibleTokes.add(token);
@@ -109,6 +120,8 @@ public abstract class AbstractPlayer implements Steppable {
         }
         return result;
     }
+
+
 
 
     public abstract void turn();

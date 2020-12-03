@@ -31,12 +31,22 @@ public class GameField {
 			}
 		}
 	}
+	public void moveInWinBase(Token token, int diceNumber){
+		int oldPos = 0;
+		for(int i=0;i<4;i++){
+			if(token.player.winSpots[i] == token){
+				token.player.winSpots[i] = null;
+				oldPos = i+1;
+			}
+		}
+		token.player.winSpots[oldPos+diceNumber] = token;
+	}
 
 	public void setInWinBase(Token token, int diceNumber){
 		int oldPos = token.getPos();
 		//System.out.println("WIN | Player: "+token.player.id+"Von: "+oldPos+" Mit "+(diceNumber-token.stepsToWinBase));
 		gameFields[oldPos] = null;
-		token.player.freeWinSpots.remove(Integer.valueOf(diceNumber-token.stepsToWinBase));
+		token.player.winSpots[diceNumber-token.stepsToWinBase-1] = token;
 		token.tokenWin();
 	}
 

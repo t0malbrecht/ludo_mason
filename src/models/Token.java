@@ -37,8 +37,8 @@ public class Token {
 	public void kick(Token token) {
 		this.pos = -1;
 		setHome(true);
-		player.game2.stats.KicksGotten[id]++;
-		player.game2.stats.KicksMade[token.player.id]++;
+		player.game2.KicksGotten[id]++;
+		player.game2.KicksMade[token.player.id]++;
 	}
 	
 	/**
