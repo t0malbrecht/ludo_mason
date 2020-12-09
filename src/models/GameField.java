@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 public class GameField {
 
 	// properties
@@ -110,6 +112,93 @@ public class GameField {
 		System.out.println();
 	}
 
+	/**
+	 * Gibt ein Array mit allen Tokens wieder.
+	 *
+	 * @return Array mit allen Tokens
+	 */
+	public Token[] getTokens() {
+		Token[] tokens = new Token[16];
+		int i = 0;
+		for (Token token : gameFields) {
+			if (token != null) {
+				tokens[i] = token;
+				i++;
+			}
+		}
+		return tokens;
+	}
 
+	/**
+	 * Gibt die Positionen der gegnerischen Spieler aus.
+	 *
+	 * @param myToken Token des Spielers
+	 * @return ArrayList mit Positionen der gegnerischen Spieler
+	 */
+	public ArrayList<Integer> getEnemyPositions(Token myToken) {
+		ArrayList<Integer> positions = new ArrayList<Integer>();
+		for (Token token : gameFields) {
+			if (token != null && token.getId() != myToken.getId()) {
+				positions.add(token.getPos());
+			}
+		}
+		return positions;
+	}
+
+	/**
+	 * Gibt für einen Token die Schritte bis zum nächstgelegenen gegnerischen Token an.
+	 *
+	 * @param myToken Token, für den die Schritte zum Gegner berechnet werden sollen
+	 * @return Schritte zum nächstgelegenen gegnerischen Token
+	 */
+	public int stepsToNearestEnemyToken(Token myToken) {
+		ArrayList<Integer> positions = getEnemyPositions(myToken);
+		int stepsToEnemy = 40;
+		for (int position : positions) {
+			if (position == -1 || position == -2) {
+				continue;
+			}
+			else if (position > myToken.getPos()) {
+				int steps = position - myToken.getPos();
+				if(steps < stepsToEnemy) {
+					stepsToEnemy = steps;
+				}
+			} else {
+				int steps = 40 - myToken.getPos() - position;
+				if(steps < stepsToEnemy) {
+					stepsToEnemy = steps;
+				}
+			}
+		}
+		return stepsToEnemy;
+	}
+
+	/**
+	 * Gibt für einen Token an, wie viele Schritte er vor dem direkt hinter ihm gelegenen Gegner steht.
+	 *
+	 * @param myToken Token, für den die Schritte zum Gegner berechnet werden sollen
+	 * @return Schritte, die Token vor einem Gegner steht
+	 */
+	public int stepsInFrontOfEnemyToken(Token myToken) {
+		ArrayList<Integer> positions = getEnemyPositions(myToken);
+		int stepsFromEnemy = 40;
+		for (int position : positions) {
+			if (position == -1 || position == -2) {
+				continue;
+			}
+			else if (myToken.getPos() > position) {
+				int steps = myToken.getPos() - position;
+				if (steps < stepsFromEnemy) {
+					stepsFromEnemy = steps;
+				}
+			} else {
+				int steps = 40 - position - myToken.getPos();
+				if (steps < stepsFromEnemy) {
+					stepsFromEnemy = steps;
+				}
+			}
+		}
+		return stepsFromEnemy;
+	}
 
 }

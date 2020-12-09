@@ -114,7 +114,13 @@ public abstract class AbstractPlayer implements Steppable {
                         result.add(1);
                     }
                     //System.out.println("Player:"+id+"Pos:"+token.getPos()+" WinPos:"+ token.getWinPos()+" stepsToWinBase:"+token.stepsToWinBase);
-                    //TODO: Implement stepsToEnemyToken
+                    if (token.getPos() >= 0) {
+                        if (gameField.stepsInFrontOfEnemyToken(token) < 7 || gameField.stepsToNearestEnemyToken(token) < diceNumber) {
+                            token.stepsFromEnemy = gameField.stepsInFrontOfEnemyToken(token);
+                            token.stepsToEnemy = gameField.stepsToNearestEnemyToken(token);
+                            result.add(4);
+                        }
+                    }
                 }
             }
         }

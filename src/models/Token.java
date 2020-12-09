@@ -10,7 +10,9 @@ public class Token {
 	private boolean isHome;
 	private boolean inWinSpot;
 	public AbstractPlayer player;
+	public GameField gameField; // create methods for stepsToEnemy and stepsFromEnemy
 	public int stepsToEnemy;
+	public int stepsFromEnemy;
 	public Integer stepsToWinBase;
 	public Integer canGoInWinBaseWith;
 
@@ -139,6 +141,10 @@ public class Token {
 	public boolean isInWinSpot() {
 		return inWinSpot;
 	}
+
+	public int getStepsToEnemy() { return stepsToEnemy; }
+
+	public int getStepsFromEnemy() { return stepsFromEnemy; }
 
 
 }
