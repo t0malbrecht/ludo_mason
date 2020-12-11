@@ -60,13 +60,13 @@ public class DefensiveStrategy extends AbstractPlayer{
                 ArrayList<Token> tokensNotInDangerNotSaveToMove = new ArrayList<>();
                 for (Token token : avaibleTokes) {
                     if (token.getStepsFromEnemy() < 7) {
-                        if (token.getStepsFromEnemy() + diceNumber > 6 && token.getPos() + diceNumber < token.getStepsToEnemy()) {
+                        if (token.getStepsFromEnemy() + diceNumber > 6 && token.getPos() + diceNumber <= token.getStepsToEnemy()) {
                             tokensInDangerSaveToMove.add(token);
                         } else {
                             tokensInDangerNotSaveToMove.add(token);
                         }
                     } else {
-                        if (token.getPos() + diceNumber < token.getStepsToEnemy()) {
+                        if (token.getPos() + diceNumber <= token.getStepsToEnemy()) {
                             tokensNotInDangerSaveToMove.add(token);
                         } else {
                             tokensNotInDangerNotSaveToMove.add(token);
