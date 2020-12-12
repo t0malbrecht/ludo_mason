@@ -57,7 +57,7 @@ public class Game2 extends SimState
             players[2] = player3;
 
             // add Player4 (Strategy)
-            AbstractPlayer player4 = new MoveLastStrategy(3, 30, gameField, this);
+            AbstractPlayer player4 = new DefensiveStrategy(3, 30, gameField, this);
             players[3] = player4;
             gameField.setPlayers(players);
 
