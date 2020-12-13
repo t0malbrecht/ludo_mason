@@ -45,19 +45,19 @@ public class Game2 extends SimState
             //make sure you understand the different version of the scheduleOnce() und scheduleRepeating() methods (read documentation)
             //agent order is random if agents with same ordering are called at the same time
             // add Player1 (Strategy)
-            AbstractPlayer player1 = new DefensiveStrategy(0, 0, gameField, this);
+            AbstractPlayer player1 = new MoveFirstStrategy(0, 0, gameField, this, null, null);
             players[0] = player1;
 
             // add Player2 (Strategy)
-            AbstractPlayer player2 = new MoveFirstStrategy(1, 10, gameField, this);
+            AbstractPlayer player2 = new MoveLastStrategy(1, 10, gameField, this, null, null);
             players[1] = player2;
 
             // add Player3 (Strategy)
-            AbstractPlayer player3 = new DefensiveStrategy(2, 20, gameField, this);
+            AbstractPlayer player3 = new MixedStrategy(2, 20, gameField, this, null, null);
             players[2] = player3;
 
             // add Player4 (Strategy)
-            AbstractPlayer player4 = new DefensiveStrategy(3, 30, gameField, this);
+            AbstractPlayer player4 = new DefensiveStrategy(3, 30, gameField, this, null, null);
             players[3] = player4;
             gameField.setPlayers(players);
 

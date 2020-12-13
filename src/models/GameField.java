@@ -89,6 +89,7 @@ public class GameField {
 
 		// neues Feld generieren.
 		this.getFieldMirror();
+
 	}
 
 
