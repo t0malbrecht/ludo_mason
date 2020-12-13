@@ -32,24 +32,24 @@ public class RandomStrategy extends AbstractPlayer {
                 getTokenAtHome().out();
                 diceCount++;
                 continue;
-            } else {
-                for (int i=0; i<avaibleOptions.size(); i++) {
-                    if (avaibleOptions.get(i) == 0) {
-                        avaibleOptions.remove(i);
-                    }
+            }
+            for (int i = 0; i < avaibleOptions.size(); i++) {
+                if (avaibleOptions.get(i) == 0) {
+                    avaibleOptions.remove(i);
                 }
-                Integer rnd = avaibleOptions.get(new Random().nextInt(avaibleOptions.size()));
+            }
+            if(avaibleOptions.size() > 0) {
                 System.out.println(avaibleOptions);
+                System.out.println(avaibleOptions.size());
+                Integer rnd = avaibleOptions.get(new Random().nextInt(avaibleOptions.size()));
                 System.out.println(rnd);
-
-                if (rnd == 1 ) {
+                if (rnd == 1) {
                     ArrayList<Token> aTokens = avaibleTokes;
                     System.out.println(aTokens);
                     gameField.setTokenToField(aTokens.get(new Random().nextInt(aTokens.size())), diceNumber);
                     diceCount++;
                     continue;
-                }
-                else if (rnd == 2) {
+                } else if (rnd == 2) {
                     Token tempToken = null;
                     try {
                         int finalDiceNumber = diceNumber;
@@ -60,19 +60,10 @@ public class RandomStrategy extends AbstractPlayer {
                     gameField.setInWinBase(tempToken, diceNumber);
                     diceCount++;
                     continue;
-                }
-                else if (rnd == 3) {
+                } else if (rnd == 3) {
                     gameField.moveInWinBase(avaibleTokensMoveWinBase.get(0), diceNumber);
                     diceCount++;
                     continue;
-                }
-                else if (rnd == 4) {
-                    ArrayList<Token> aTokens = avaibleTokes;
-                    System.out.println(aTokens);
-                    gameField.setTokenToField(aTokens.get(new Random().nextInt(aTokens.size())), diceNumber);
-                    diceCount++;
-                    continue;
-
                 }
             }
             diceCount++;
