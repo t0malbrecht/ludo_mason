@@ -33,15 +33,20 @@ public abstract class AbstractPlayer implements Steppable {
     /**
      * Spieler-Konstruktor. Spielkennung durch Ganzzahl (1,2,3,4) mit einer berechneten St.
      */
-    public AbstractPlayer(int identifier, int startPos, GameField gameField, Game2 game2) {
+    public AbstractPlayer(int identifier, int startPos, GameField gameField, Game2 game2, Token [] winSpots, ArrayList<Token> tokens) {
         this.game2 = game2;
         this.id = identifier;
         this.startPos = startPos;
         this.winPos = (this.startPos - 1) < 0 ? 39 : this.startPos - 1;
         this.roundCount = 0;
         this.gameField = gameField;
-        this.newTokens();
-        this.winSpots = new Token[4];
+        if (winSpots == null && tokens == null) {
+            this.newTokens();
+            this.winSpots = new Token[4];
+        } else {
+            this.tokens = tokens;
+            this.winSpots = winSpots;
+        }
     }
 
     public int rollDice() {

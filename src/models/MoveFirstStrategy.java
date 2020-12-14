@@ -14,8 +14,8 @@ public class MoveFirstStrategy extends AbstractPlayer{
 	 * @param identifier
 	 * @param startPos
 	 */
-	public MoveFirstStrategy(int identifier, int startPos, GameField gameField, Game2 game2) {
-		super(identifier, startPos, gameField, game2);
+	public MoveFirstStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token [] winSpots, ArrayList<Token> tokens) {
+		super(identifier, startPos, gameField, game2, winSpots, tokens);
 	}
 
 	public void turn(){

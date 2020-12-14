@@ -10,8 +10,8 @@ import java.util.HashMap;
 
 public class DefensiveStrategy extends AbstractPlayer{
 
-    public DefensiveStrategy(int identifier, int startPos, GameField gameField, Game2 game2) {
-        super(identifier, startPos, gameField, game2);
+    public DefensiveStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token [] winSpots, ArrayList<Token> tokens) {
+        super(identifier, startPos, gameField, game2, winSpots, tokens);
     }
 
     @Override

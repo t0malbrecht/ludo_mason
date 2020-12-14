@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="44491b2e-1d0c-49b2-b229-d7c2889164d3" name="Default Changelist" comment="defensive Strategie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mason_test/game/Game2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mason_test/game/Game2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mason_test/models/AbstractPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mason_test/models/AbstractPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mason_test/models/DefensiveStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mason_test/models/DefensiveStrategy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Game2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/AbstractPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/DefensiveStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/DefensiveStrategy.java" afterDir="false" />
