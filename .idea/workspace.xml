@@ -19,85 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44491b2e-1d0c-49b2-b229-d7c2889164d3" name="Default Changelist" comment="">
+    <list default="true" id="44491b2e-1d0c-49b2-b229-d7c2889164d3" name="Default Changelist" comment="defensive Strategie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mason_test/game/Game2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mason_test/game/Game2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mason_test/models/AbstractPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mason_test/models/AbstractPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mason_test/models/DefensiveStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mason_test/models/DefensiveStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Game2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/AbstractPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/DefensiveStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/DefensiveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/RandomStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/RandomStrategy.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/Game2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="59" column="59" lean-forward="true" selection-start-line="59" selection-start-column="59" selection-end-line="59" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/GameField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/AbstractPlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-638">
-              <caret line="211" selection-start-line="211" selection-end-line="211" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/models/MixedStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="39" column="120" selection-start-line="39" selection-start-column="120" selection-end-line="39" selection-end-column="120" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/MoveFirstStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/MoveLastStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/DefensiveStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -107,73 +42,14 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="randomstrategy" />
+        <entry key="$PROJECT_DIR$" value="defensiveStrategy" />
       </map>
     </option>
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="958890fd-296b-44e1-bd65-7c239396ac28" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/models/AbstractPlayer.java" />
-        <option value="$PROJECT_DIR$/src/game/Game2.java" />
-        <option value="$PROJECT_DIR$/src/models/MoveFirstStrategy.java" />
-        <option value="$PROJECT_DIR$/src/models/MoveLastStrategy.java" />
-        <option value="$PROJECT_DIR$/src/models/DefensiveStrategy.java" />
-        <option value="$PROJECT_DIR$/src/models/GameField.java" />
-        <option value="$PROJECT_DIR$/src/models/MixedStrategy.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1612" />
-    <option name="height" value="876" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1khK8g3LojzgPtCKpu8UL7wDDft" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ludo_mason2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludo_mason2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ludo_mason2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludo_mason2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ludo_mason2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludo_mason2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ludo_mason2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludo_mason2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -183,13 +59,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1607938528226" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -211,18 +85,6 @@
       <recent name="models" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Application.Game2">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Game" />
@@ -240,7 +102,7 @@
     <configuration name="Game2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Game2" />
       <module name="mason_test" />
-      <option name="PROGRAM_PARAMETERS" value="-repeat 1000" />
+      <option name="PROGRAM_PARAMETERS" value="-repeat 10000 -quiet 0" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.*" />
@@ -301,13 +163,25 @@
       <list>
         <item itemvalue="Application.Game2" />
         <item itemvalue="Application.Tutorial1" />
-        <item itemvalue="Application.PacMan" />
         <item itemvalue="Application.PacManWithUI" />
+        <item itemvalue="Application.PacMan" />
         <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -336,7 +210,7 @@
       <workItem from="1606913482041" duration="14642000" />
       <workItem from="1607021141474" duration="4661000" />
       <workItem from="1607674535526" duration="1526000" />
-      <workItem from="1607813248339" duration="838000" />
+      <workItem from="1607853060004" duration="1845000" />
     </task>
     <task id="LOCAL-00001" summary="defensive Strategie">
       <created>1607675586447</created>
@@ -345,66 +219,8 @@
       <option name="project" value="LOCAL" />
       <updated>1607675586447</updated>
     </task>
-    <task id="LOCAL-00002" summary="mixed Strategy">
-      <created>1607813828349</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1607813828349</updated>
-    </task>
-    <task id="LOCAL-00003" summary="added move first">
-      <created>1607813990732</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1607813990732</updated>
-    </task>
-    <task id="LOCAL-00004" summary="mixed strategy">
-      <created>1607901072793</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1607901072793</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9532000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2535211" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -415,27 +231,8 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
           </value>
         </entry>
       </map>
@@ -443,167 +240,169 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="defensive Strategie" />
-    <MESSAGE value="mixed Strategy" />
-    <MESSAGE value="added move first" />
-    <MESSAGE value="mixed strategy" />
-    <option name="LAST_COMMIT_MESSAGE" value="mixed strategy" />
+    <option name="LAST_COMMIT_MESSAGE" value="defensive Strategie" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Project_Structure" />
-    <state x="552" y="178" key="#Project_Structure/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" />
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" />
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="756" y="404" width="408" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" />
-    <state x="756" y="404" width="408" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="480" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" />
-    <state x="480" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" />
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" />
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" />
-    <state x="666" y="261" key="FileChooserDialogImpl" />
-    <state x="666" y="261" key="FileChooserDialogImpl/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state width="1269" height="256" key="GridCell.Tab.0.bottom" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="267" key="GridCell.Tab.0.bottom/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" />
-    <state width="1398" height="269" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" />
-    <state width="1269" height="256" key="GridCell.Tab.0.bottom/0.25.1440.815@0.25.1440.815" />
-    <state width="1398" height="303" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" />
-    <state width="1269" height="256" key="GridCell.Tab.0.center" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="267" key="GridCell.Tab.0.center/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" />
-    <state width="1398" height="269" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" />
-    <state width="1269" height="256" key="GridCell.Tab.0.center/0.25.1440.815@0.25.1440.815" />
-    <state width="1398" height="303" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" />
-    <state width="1269" height="256" key="GridCell.Tab.0.left" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="267" key="GridCell.Tab.0.left/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" />
-    <state width="1398" height="269" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" />
-    <state width="1269" height="256" key="GridCell.Tab.0.left/0.25.1440.815@0.25.1440.815" />
-    <state width="1398" height="303" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" />
-    <state width="1269" height="256" key="GridCell.Tab.0.right" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="267" key="GridCell.Tab.0.right/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" />
-    <state width="1398" height="269" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" />
-    <state width="1269" height="256" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" />
-    <state width="1398" height="303" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" />
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom" />
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.25.1440.817@0.25.1440.817" />
-    <state width="1398" height="303" key="GridCell.Tab.1.center" />
-    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1398" height="303" key="GridCell.Tab.1.center/0.25.1440.817@0.25.1440.817" />
-    <state width="1398" height="303" key="GridCell.Tab.1.left" />
-    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1398" height="303" key="GridCell.Tab.1.left/0.25.1440.817@0.25.1440.817" />
-    <state width="1398" height="303" key="GridCell.Tab.1.right" />
-    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1398" height="303" key="GridCell.Tab.1.right/0.25.1440.817@0.25.1440.817" />
-    <state width="1877" height="348" key="GridCell.Tab.2.bottom" />
-    <state width="1877" height="348" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="348" key="GridCell.Tab.2.center" />
-    <state width="1877" height="348" key="GridCell.Tab.2.center/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="348" key="GridCell.Tab.2.left" />
-    <state width="1877" height="348" key="GridCell.Tab.2.left/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state width="1877" height="348" key="GridCell.Tab.2.right" />
-    <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state x="2360" y="100" key="SettingsEditor" />
-    <state x="440" y="94" key="SettingsEditor/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="2360" y="100" key="SettingsEditor/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" />
-    <state x="469" y="153" key="VCS.ChangeListViewerDialog" />
-    <state x="469" y="153" key="VCS.ChangeListViewerDialog/0.0.1440.900@0.0.1440.900" />
-    <state x="320" y="194" key="Vcs.Push.Dialog.v2" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" />
-    <state x="320" y="194" key="Vcs.Push.Dialog.v2/0.25.1440.815@0.25.1440.815" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" />
-    <state x="577" y="366" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
-    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="577" y="377" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" />
-    <state x="577" y="366" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1440.815@0.25.1440.815" />
-    <state x="1920" y="6" width="1409" height="718" key="dock-window-1" />
-    <state x="1920" y="6" width="1409" height="718" key="dock-window-1/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="1920" y="6" width="1409" height="718" maximized="true" key="dock-window-2" />
-    <state x="1920" y="6" width="1409" height="718" maximized="true" key="dock-window-2/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-    <state x="489" y="132" key="git4idea.branch.GitSmartOperationDialog" />
-    <state x="489" y="132" key="git4idea.branch.GitSmartOperationDialog/0.25.1440.815@0.25.1440.815" />
-    <state x="505" y="300" key="git4idea.ui.GitUnstashDialog" />
-    <state x="505" y="300" key="git4idea.ui.GitUnstashDialog/0.0.1440.900@0.0.1440.900" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/models/RandomStrategy.java" />
-    <entry file="file://$PROJECT_DIR$/src/game/Game2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="59" column="59" lean-forward="true" selection-start-line="59" selection-start-column="59" selection-end-line="59" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/MoveFirstStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/MoveLastStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/DefensiveStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/AbstractPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-638">
-          <caret line="211" selection-start-line="211" selection-end-line="211" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/GameField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/MixedStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="39" column="120" selection-start-line="39" selection-start-column="120" selection-end-line="39" selection-end-column="120" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <state x="552" y="178" key="#Project_Structure" timestamp="1606147351127">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Project_Structure/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606147351127" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607025845268">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606862729400" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607025845268" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1606322878894">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606322878894" />
+    <state x="756" y="404" width="408" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606300883859">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="756" y="404" width="408" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606300883859" />
+    <state x="480" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606323322274">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="480" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606323322274" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607022350396">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606323529291" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607022350396" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1607436170435">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1607436170435" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1606147306067">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="261" key="FileChooserDialogImpl/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606147306067" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1607854329255">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606920489712" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" timestamp="1606937200471" />
+    <state width="1398" height="269" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607526297107" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606474231674" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607854329255" />
+    <state width="1269" height="256" key="GridCell.Tab.0.bottom/0.25.1440.815@0.25.1440.815" timestamp="1607675600066" />
+    <state width="1398" height="303" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1607600275811" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1607854329254">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606920489712" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" timestamp="1606937200471" />
+    <state width="1398" height="269" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607526297106" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606474231674" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607854329254" />
+    <state width="1269" height="256" key="GridCell.Tab.0.center/0.25.1440.815@0.25.1440.815" timestamp="1607675600065" />
+    <state width="1398" height="303" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1607600275809" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1607854329253">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606920489712" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" timestamp="1606937200471" />
+    <state width="1398" height="269" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607526297106" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606474231674" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607854329253" />
+    <state width="1269" height="256" key="GridCell.Tab.0.left/0.25.1440.815@0.25.1440.815" timestamp="1607675600065" />
+    <state width="1398" height="303" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1607600275808" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1607854329254">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606920489712" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" timestamp="1606937200471" />
+    <state width="1398" height="269" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607526297107" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606474231674" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607854329254" />
+    <state width="1269" height="256" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" timestamp="1607675600066" />
+    <state width="1398" height="303" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1607600275810" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1607600275812">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607460600321" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606473686742" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.25.1440.817@0.25.1440.817" timestamp="1607600275812" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1607600275811">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1607460600321" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606473686740" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.25.1440.817@0.25.1440.817" timestamp="1607600275811" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1607600275811">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1607460600320" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606473686739" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.25.1440.817@0.25.1440.817" timestamp="1607600275811" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1607600275812">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1607460600321" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606473686741" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.25.1440.817@0.25.1440.817" timestamp="1607600275812" />
+    <state width="1877" height="348" key="GridCell.Tab.2.bottom" timestamp="1606470746544">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606470746544" />
+    <state width="1877" height="348" key="GridCell.Tab.2.center" timestamp="1606470746543">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.center/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606470746543" />
+    <state width="1877" height="348" key="GridCell.Tab.2.left" timestamp="1606470746543">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.left/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606470746543" />
+    <state width="1877" height="348" key="GridCell.Tab.2.right" timestamp="1606470746543">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606470746543" />
+    <state x="2360" y="100" key="SettingsEditor" timestamp="1606320621365">
+      <screen x="1920" y="6" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606147338695" />
+    <state x="2360" y="100" key="SettingsEditor/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" timestamp="1606320621365" />
+    <state x="469" y="153" key="VCS.ChangeListViewerDialog" timestamp="1607436034472">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="469" y="153" key="VCS.ChangeListViewerDialog/0.0.1440.900@0.0.1440.900" timestamp="1607436034472" />
+    <state x="320" y="194" key="Vcs.Push.Dialog.v2" timestamp="1607675590265">
+      <screen x="0" y="25" width="1440" height="815" />
+    </state>
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607528103179" />
+    <state x="320" y="194" key="Vcs.Push.Dialog.v2/0.25.1440.815@0.25.1440.815" timestamp="1607675590265" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1607853111839">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606913484183" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@1920.6.1920.1040" timestamp="1606831612469" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.-135.1920.1040@0.0.1920.1040" timestamp="1606468456384" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607853111839" />
+    <state x="577" y="366" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607675326086">
+      <screen x="0" y="25" width="1440" height="815" />
+    </state>
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606324359607" />
+    <state x="577" y="377" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1607435478385" />
+    <state x="577" y="366" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1440.815@0.25.1440.815" timestamp="1607675326086" />
+    <state x="1920" y="6" width="1409" height="718" key="dock-window-1" timestamp="1606231202088">
+      <screen x="1920" y="6" width="1920" height="1040" />
+    </state>
+    <state x="1920" y="6" width="1409" height="718" key="dock-window-1/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606231202088" />
+    <state x="1920" y="6" width="1409" height="718" maximized="true" key="dock-window-2" timestamp="1606322078115">
+      <screen x="1920" y="6" width="1920" height="1040" />
+    </state>
+    <state x="1920" y="6" width="1409" height="718" maximized="true" key="dock-window-2/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606322078115" />
+    <state x="489" y="132" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607675266573">
+      <screen x="0" y="25" width="1440" height="815" />
+    </state>
+    <state x="489" y="132" key="git4idea.branch.GitSmartOperationDialog/0.25.1440.815@0.25.1440.815" timestamp="1607675266573" />
+    <state x="505" y="300" key="git4idea.ui.GitUnstashDialog" timestamp="1607436035349">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="505" y="300" key="git4idea.ui.GitUnstashDialog/0.0.1440.900@0.0.1440.900" timestamp="1607436035349" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606301865910">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.120.1920.1040/0.0.1920.1040/1920.6.1920.1040@0.0.1920.1040" timestamp="1606301865910" />
   </component>
 </project>
