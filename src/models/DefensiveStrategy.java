@@ -53,7 +53,7 @@ public class DefensiveStrategy extends AbstractPlayer{
                 diceCount++;
                 continue;
             }
-            if (avaibleOptions.contains(4)) {
+            if (avaibleOptions.contains(1)) {
                 ArrayList<Token> tokensInDangerSaveToMove = new ArrayList<>();
                 ArrayList<Token> tokensInDangerNotSaveToMove = new ArrayList<>();
                 ArrayList<Token> tokensNotInDangerSaveToMove = new ArrayList<>();
