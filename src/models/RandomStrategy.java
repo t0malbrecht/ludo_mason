@@ -39,14 +39,9 @@ public class RandomStrategy extends AbstractPlayer {
                 }
             }
             if(avaibleOptions.size() > 0) {
-                System.out.println(avaibleOptions);
-                System.out.println(avaibleOptions.size());
                 Integer rnd = avaibleOptions.get(new Random().nextInt(avaibleOptions.size()));
-                System.out.println(rnd);
                 if (rnd == 1) {
-                    ArrayList<Token> aTokens = avaibleTokes;
-                    System.out.println(aTokens);
-                    gameField.setTokenToField(aTokens.get(new Random().nextInt(aTokens.size())), diceNumber);
+                    gameField.setTokenToField(avaibleTokes.get(new Random().nextInt(avaibleTokes.size())), diceNumber);
                     diceCount++;
                     continue;
                 } else if (rnd == 2) {
