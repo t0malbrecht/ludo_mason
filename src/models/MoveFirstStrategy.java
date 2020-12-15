@@ -19,7 +19,6 @@ public class MoveFirstStrategy extends AbstractPlayer{
 	}
 
 	public void turn(){
-		Game2.TokensSetToWin[id]++;
 		printTokenPosition();
 		Game2.round++;
 		int diceCount = 0;
@@ -48,6 +47,7 @@ public class MoveFirstStrategy extends AbstractPlayer{
 					e.printStackTrace();
 				}
 				gameField.setInWinBase(tempToken, diceNumber);
+				Game2.TokensSetToWin[id]++;
 				diceCount++;
 				continue;
 			}

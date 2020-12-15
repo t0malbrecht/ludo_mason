@@ -16,7 +16,6 @@ public class DefensiveStrategy extends AbstractPlayer{
 
     @Override
     public void turn(){
-        Game2.TokensSetToWin[id]++;
         printTokenPosition();
         Game2.round++;
         int diceCount = 0; // number of
@@ -45,6 +44,7 @@ public class DefensiveStrategy extends AbstractPlayer{
                     e.printStackTrace();
                 }
                 gameField.setInWinBase(tempToken, diceNumber);
+                Game2.TokensSetToWin[id]++;
                 diceCount++;
                 continue;
             }
