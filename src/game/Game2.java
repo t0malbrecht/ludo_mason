@@ -128,10 +128,10 @@ public class Game2 extends SimState
     }
 
     public static void setRowItems(){
-       rowItems.add(new String[] {Integer.toString(strategyround),"Player 1", classes[combinations.get(strategyround)[0]].getName(), Integer.toString(round), Integer.toString(KicksMade[0]), Integer.toString(KicksGotten[0]), Integer.toString(TokensSetToWin[0])});
-        rowItems.add(new String[] {Integer.toString(strategyround),"Player 2", classes[combinations.get(strategyround)[1]].getName(), Integer.toString(round), Integer.toString(KicksMade[1]), Integer.toString(KicksGotten[1]), Integer.toString(TokensSetToWin[1])});
-        rowItems.add(new String[] {Integer.toString(strategyround),"Player 3", classes[combinations.get(strategyround)[2]].getName(), Integer.toString(round), Integer.toString(KicksMade[2]), Integer.toString(KicksGotten[2]), Integer.toString(TokensSetToWin[2])});
-        rowItems.add(new String[] {Integer.toString(strategyround),"Player 4", classes[combinations.get(strategyround)[3]].getName(), Integer.toString(round), Integer.toString(KicksMade[3]), Integer.toString(KicksGotten[3]), Integer.toString(TokensSetToWin[3])});
+       rowItems.add(new String[] {Integer.toString(strategyround),"Player 1", classes[combinations.get(strategyround)[0]].getName(), Integer.toString(winsOfPlayer[0]), Integer.toString(round), Integer.toString(KicksMade[0]), Integer.toString(KicksGotten[0]), Integer.toString(TokensSetToWin[0])});
+        rowItems.add(new String[] {Integer.toString(strategyround),"Player 2", classes[combinations.get(strategyround)[1]].getName(), Integer.toString(winsOfPlayer[1]), Integer.toString(round), Integer.toString(KicksMade[1]), Integer.toString(KicksGotten[1]), Integer.toString(TokensSetToWin[1])});
+        rowItems.add(new String[] {Integer.toString(strategyround),"Player 3", classes[combinations.get(strategyround)[2]].getName(), Integer.toString(winsOfPlayer[2]), Integer.toString(round), Integer.toString(KicksMade[2]), Integer.toString(KicksGotten[2]), Integer.toString(TokensSetToWin[2])});
+        rowItems.add(new String[] {Integer.toString(strategyround),"Player 4", classes[combinations.get(strategyround)[3]].getName(), Integer.toString(winsOfPlayer[3]), Integer.toString(round), Integer.toString(KicksMade[3]), Integer.toString(KicksGotten[3]), Integer.toString(TokensSetToWin[3])});
        }
 
     public static void printStats(){
