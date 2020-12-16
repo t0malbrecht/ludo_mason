@@ -1,0 +1,7 @@
+
+results.csv
+sample.csv
+.idea/workspace.xml
+*.class
+out/production/mason_test/models/MixedStrategy.class
+*.kotlin_module

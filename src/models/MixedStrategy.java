@@ -16,6 +16,7 @@ public class MixedStrategy extends AbstractPlayer {
 
     @Override
     public void turn() {
+        Game2.round++;
 
         for (int i = 0; i < super.tokens.size(); i++) {
             Token t = super.tokens.get(i);
