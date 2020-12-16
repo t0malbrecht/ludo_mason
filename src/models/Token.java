@@ -15,6 +15,9 @@ public class Token {
 	public int stepsFromEnemy;
 	public Integer stepsToWinBase;
 	public Integer canGoInWinBaseWith;
+	public boolean canHitOtherToken;
+	public boolean itsNearByEnemies;
+	public Integer stepsToUnfriendlyToken;
 
 	
 	/**
@@ -31,6 +34,8 @@ public class Token {
 		this.isHome = true;
 		this.player = player;
 		this.canGoInWinBaseWith = 0;
+		this.canHitOtherToken = true;
+		this.itsNearByEnemies = false;
 	}
 	
 	/**
