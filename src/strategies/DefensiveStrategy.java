@@ -1,16 +1,18 @@
-package models;
+package strategies;
 
+import game.AbstractPlayer;
 import game.Game2;
+import game.GameField;
+import game.Token;
+import services.IAmSureThisWillNotHappenException;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 
-public class DefensiveStrategy extends AbstractPlayer{
+public class DefensiveStrategy extends AbstractPlayer {
 
-    public DefensiveStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token [] winSpots, ArrayList<Token> tokens) {
+    public DefensiveStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token[] winSpots, ArrayList<Token> tokens) {
         super(identifier, startPos, gameField, game2, winSpots, tokens);
     }
 

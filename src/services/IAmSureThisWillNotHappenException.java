@@ -1,4 +1,4 @@
-package models;
+package services;
 
 public class IAmSureThisWillNotHappenException extends Exception {
 }

@@ -1,9 +1,10 @@
-package models;
+package game;
 
 import game.Game2;
+import game.GameField;
+import game.Token;
 import sim.engine.SimState;
 import sim.engine.Steppable;
-import ec.util.MersenneTwisterFast;
 
 import java.util.ArrayList;
 
@@ -236,7 +237,7 @@ public abstract class AbstractPlayer implements Steppable {
     }
 
     /**
-     * Prüft, welche Spielfiguren überhaupt bewegt werden dürfen.
+     * Prüft, welche Spielfiguren üdberhaupt bewegt werden dürfen.
      *
      * @return Array der Ids.
      */
@@ -256,7 +257,7 @@ public abstract class AbstractPlayer implements Steppable {
      * Check Winning Condition
      */
     public void checkWin() {
-        if (tokenInWinSpot() == 4) {
+        if (tokenInWinSpot() == 4 && game2.end == false) {
             game2.winsOfPlayer[id]++;
             game2.gameFinish();
         }

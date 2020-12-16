@@ -1,6 +1,9 @@
-package models;
+package strategies;
 
+import game.AbstractPlayer;
 import game.Game2;
+import game.GameField;
+import game.Token;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -16,8 +19,6 @@ public class MixedStrategy extends AbstractPlayer {
 
     @Override
     public void turn() {
-        Game2.round++;
-
         for (int i = 0; i < super.tokens.size(); i++) {
             Token t = super.tokens.get(i);
             this.tokens.add(t);

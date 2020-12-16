@@ -1,12 +1,16 @@
-package models;
+package strategies;
 
+import game.AbstractPlayer;
 import game.Game2;
+import game.GameField;
+import game.Token;
+import services.IAmSureThisWillNotHappenException;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class AggressiveStrategy extends AbstractPlayer{
+public class AggressiveStrategy extends AbstractPlayer {
 
 	/**
 	 * Spieler-Konstruktor. Spielkennung durch Ganzzahl (1,2,3,4) mit einer berechneten St.
@@ -14,7 +18,7 @@ public class AggressiveStrategy extends AbstractPlayer{
 	 * @param identifier
 	 * @param startPos
 	 */
-	public AggressiveStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token [] winSpots, ArrayList<Token> tokens) {
+	public AggressiveStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token[] winSpots, ArrayList<Token> tokens) {
 		super(identifier, startPos, gameField, game2, winSpots, tokens);
 	}
 
@@ -28,7 +32,7 @@ public class AggressiveStrategy extends AbstractPlayer{
 			if(game2.end)
 				return;
 			
-			// Würfeln
+			// Wï¿½rfeln
 			diceNumber = rollDice();
 			diceCount++;
 			

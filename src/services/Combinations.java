@@ -10,8 +10,7 @@ public class Combinations {
             return savedCombinations;
         }
         ArrayList<int[]> combinations = new ArrayList<>();
-        int range[] = {0,1,2,3,4};
-        int digits = 4;
+        int range[] = {0,1,2,3,4,5};
         int firstDigit;
         int secondDigit;
         int thirdDigit;

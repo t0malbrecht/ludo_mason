@@ -1,12 +1,16 @@
-package models;
+package strategies;
 
+import game.AbstractPlayer;
 import game.Game2;
+import game.GameField;
+import game.Token;
+import services.IAmSureThisWillNotHappenException;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class MoveFirstStrategy extends AbstractPlayer{
+public class MoveLastStrategy extends AbstractPlayer {
 
 	/**
 	 * Spieler-Konstruktor. Spielkennung durch Ganzzahl (1,2,3,4) mit einer berechneten St.
@@ -14,7 +18,7 @@ public class MoveFirstStrategy extends AbstractPlayer{
 	 * @param identifier
 	 * @param startPos
 	 */
-	public MoveFirstStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token [] winSpots, ArrayList<Token> tokens) {
+	public MoveLastStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token[] winSpots, ArrayList<Token> tokens) {
 		super(identifier, startPos, gameField, game2, winSpots, tokens);
 	}
 
@@ -51,11 +55,7 @@ public class MoveFirstStrategy extends AbstractPlayer{
 				diceCount++;
 				continue;
 			}
-			if(avaibleOptions.contains(3)){
-				gameField.moveInWinBase(avaibleTokensMoveWinBase.get(0), diceNumber);
-				diceCount++;
-				continue;
-			}
+			//Hier bewege ich nicht im WInspot da ich immer die am weitesten hinten bewegen möchte
 			if(avaibleOptions.contains(1)){
 				ArrayList<Token> sortedTokens = avaibleTokes;
 				int finalDiceNumber1 = diceNumber;
@@ -63,7 +63,7 @@ public class MoveFirstStrategy extends AbstractPlayer{
 				Collections.sort(sortedTokens,
 						Comparator.comparing(Token::getStepsToWinBase));
 				if(sortedTokens.size() > 0 && gameField != null){
-					gameField.setTokenToField(sortedTokens.get(0), diceNumber);
+					gameField.setTokenToField(sortedTokens.get(sortedTokens.size()-1), diceNumber);
 				}
 				diceCount++;
 				continue;

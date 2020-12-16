@@ -1,13 +1,17 @@
-package models;
+package strategies;
 
+import game.AbstractPlayer;
 import game.Game2;
+import game.GameField;
+import game.Token;
+import services.IAmSureThisWillNotHappenException;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomStrategy extends AbstractPlayer {
 
-    public RandomStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token [] winSpots, ArrayList<Token> tokens) {
+    public RandomStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token[] winSpots, ArrayList<Token> tokens) {
         super(identifier, startPos, gameField, game2, winSpots, tokens);
     }
 
