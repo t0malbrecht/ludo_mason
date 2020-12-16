@@ -66,7 +66,23 @@ public class GameField {
 			}
 		}
 		return false;
+	}
+	
+	public boolean isAnotherTokenFromDifferentPlayerOnSpot(Token token, int diceNumber){
+		int oldPos = token.getPos();
+		int newPos = oldPos + diceNumber;
+		// von der letzten position auf die erste
+		if (newPos > 39) {
+			newPos = newPos - 40;
 		}
+
+		if(gameFields[newPos] != null) {
+			if (gameFields[newPos].player.id != token.player.id) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	/**
 	 * Bewegen der Spielerfiguren auf ein gespiegeltes Spielfeld.

@@ -74,6 +74,8 @@ public abstract class AbstractPlayer implements Steppable {
         avaibleTokensMoveWinBase = new ArrayList<>();
         for (Token token : tokens) {
             token.canGoInWinBaseWith = 0;
+            token.canHitOtherToken = false;
+            token.itsNearByEnemies = false;
             if (token.isHome()) {
                 result.add(0);
                 continue;
@@ -89,7 +91,15 @@ public abstract class AbstractPlayer implements Steppable {
             } else {
                 if (gameField.isAnotherTokenFromSamePlayerOnSpot(token, diceNumber)) {
                     continue;
-                } else {
+                } else if (gameField.isAnotherTokenFromDifferentPlayerOnSpot(token, diceNumber)) {
+                	token.canHitOtherToken = true;
+                	result.add(4);
+                }
+                else {
+                	 if ((gameField.stepsInFrontOfEnemyToken(token) - diceNumber) < 5){
+                     	token.itsNearByEnemies = true;
+                     	result.add(5);
+                     }
                     if (token.getWinPos() == token.getPos()) {
                         token.stepsToWinBase = 0;
                     } else {

@@ -24,7 +24,7 @@ public class MixedStrategy extends AbstractPlayer {
 
         this.winSpots = super.winSpots;
 
-        int rnd = new Random().nextInt(3);
+        int rnd = new Random().nextInt(4);
 
         if (rnd == 0) {
             DefensiveStrategy def = new DefensiveStrategy(this.id, this.startPos, this.gameField, this.game2, this.winSpots, this.tokens);
@@ -38,6 +38,11 @@ public class MixedStrategy extends AbstractPlayer {
 
         if (rnd == 2) {
             MoveLastStrategy mla = new MoveLastStrategy(this.id, this.startPos, this.gameField, this.game2, this.winSpots, this.tokens);
+            mla.turn();
+        }
+        
+        if (rnd == 3) {
+            AggressiveStrategy mla = new AggressiveStrategy(this.id, this.startPos, this.gameField, this.game2, this.winSpots, this.tokens);
             mla.turn();
         }
     }
