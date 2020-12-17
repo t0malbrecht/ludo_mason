@@ -14,7 +14,6 @@ import java.util.concurrent.locks.Lock;
 
 public class Game2 extends SimState {
     private static final long serialVersionUID = 1;
-    public int gameCounter = 1;
 
     private AbstractPlayer[] players = new AbstractPlayer[4];
     public boolean end = false;
@@ -22,7 +21,8 @@ public class Game2 extends SimState {
 
     //stats
     public static int round = 0;
-    public static int game = 1;
+    public static int[] zuge = {0, 0, 0, 0};
+    public static int game = 0;
     public static int[] winsOfPlayer = {0, 0, 0, 0};
     public static int[] KicksGotten = {0, 0, 0, 0};
     public static int[] KicksMade = {0, 0, 0, 0};
@@ -30,13 +30,15 @@ public class Game2 extends SimState {
     public static ArrayList<String[]> rowItems = new ArrayList<>();
     public static ArrayList<Integer> workedGames = new ArrayList<>();
     public static int gamesPerSimulation = 10;
+    public static int rowID = 0;
 
     //strategy simulation run
     public static Class[] classes;
 
     static {
         try {
-            classes = new Class[]{Class.forName("strategies.DefensiveStrategy"), Class.forName("strategies.MixedStrategy"), Class.forName("strategies.MoveFirstStrategy"), Class.forName("strategies.MoveLastStrategy"), Class.forName("strategies.RandomStrategy"), Class.forName("strategies.AggressiveStrategy")};
+            classes = new Class[]{Class.forName("strategies.DefensiveStrategy"), Class.forName("strategies.DefensiveStrategy"), Class.forName("strategies.MoveFirstStrategy"), Class.forName("strategies.MoveLastStrategy"), Class.forName("strategies.RandomStrategy"), Class.forName("strategies.AggressiveStrategy")};
+            //classes = new Class[]{Class.forName("strategies.DefensiveStrategy"), Class.forName("strategies.AggressiveStrategy"), Class.forName("strategies.MoveFirstStrategy"), Class.forName("strategies.AggressiveStrategy"), Class.forName("strategies.AggressiveStrategy"), Class.forName("strategies.AggressiveStrategy")};
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -64,6 +66,7 @@ public class Game2 extends SimState {
     public void resetGame() {
         this.end = false;
         round = 0;
+        zuge = new int[] {0, 0, 0, 0};
         winsOfPlayer = new int[] {0, 0, 0, 0};
         KicksGotten = new int[] {0, 0, 0, 0};
         KicksMade = new int[] {0, 0, 0, 0};
@@ -131,7 +134,6 @@ public class Game2 extends SimState {
                 e.printStackTrace();
             }
         }
-        gameCounter++;
         this.finish();
     }
 
@@ -142,11 +144,16 @@ public class Game2 extends SimState {
     }
 
     public static void setRowItems() {
-        rowItems.add(new String[]{Integer.toString(strategyRound), "Player 1", classes[combinations.get(strategyRound)[0]].getName(), Integer.toString(winsOfPlayer[0]), Integer.toString(round/gamesPerSimulation), Integer.toString(KicksMade[0]), Integer.toString(KicksGotten[0]), Integer.toString(TokensSetToWin[0])});
-        rowItems.add(new String[]{Integer.toString(strategyRound), "Player 2", classes[combinations.get(strategyRound)[1]].getName(), Integer.toString(winsOfPlayer[1]), Integer.toString(round/gamesPerSimulation), Integer.toString(KicksMade[1]), Integer.toString(KicksGotten[1]), Integer.toString(TokensSetToWin[1])});
-        rowItems.add(new String[]{Integer.toString(strategyRound), "Player 3", classes[combinations.get(strategyRound)[2]].getName(), Integer.toString(winsOfPlayer[2]), Integer.toString(round/gamesPerSimulation), Integer.toString(KicksMade[2]), Integer.toString(KicksGotten[2]), Integer.toString(TokensSetToWin[2])});
-        rowItems.add(new String[]{Integer.toString(strategyRound), "Player 4", classes[combinations.get(strategyRound)[3]].getName(), Integer.toString(winsOfPlayer[3]), Integer.toString(round/gamesPerSimulation), Integer.toString(KicksMade[3]), Integer.toString(KicksGotten[3]), Integer.toString(TokensSetToWin[3])});
+        rowID++;
+        rowItems.add(new String[]{Integer.toString(rowID), Integer.toString(strategyRound), "Player 1", classes[combinations.get(strategyRound)[0]].getName(), Integer.toString(winsOfPlayer[0]), Integer.toString(zuge[0]/gamesPerSimulation), Double.toString((double) KicksMade[0]/gamesPerSimulation), Double.toString((double) KicksGotten[0]/gamesPerSimulation), Double.toString((double) TokensSetToWin[0]/gamesPerSimulation)});
+        rowItems.add(new String[]{Integer.toString(rowID), Integer.toString(strategyRound), "Player 2", classes[combinations.get(strategyRound)[1]].getName(), Integer.toString(winsOfPlayer[1]), Integer.toString(zuge[1]/gamesPerSimulation), Double.toString((double) KicksMade[1]/gamesPerSimulation), Double.toString((double) KicksGotten[1]/gamesPerSimulation), Double.toString((double) TokensSetToWin[1]/gamesPerSimulation)});
+        rowID++;
+        rowItems.add(new String[]{Integer.toString(rowID), Integer.toString(strategyRound), "Player 3", classes[combinations.get(strategyRound)[2]].getName(), Integer.toString(winsOfPlayer[2]), Integer.toString(zuge[2]/gamesPerSimulation), Double.toString((double) KicksMade[2]/gamesPerSimulation), Double.toString((double) KicksGotten[2]/gamesPerSimulation), Double.toString((double) TokensSetToWin[2]/gamesPerSimulation)});
+        rowID++;
+        rowItems.add(new String[]{Integer.toString(rowID), Integer.toString(strategyRound), "Player 4", classes[combinations.get(strategyRound)[3]].getName(), Integer.toString(winsOfPlayer[3]), Integer.toString(zuge[3]/gamesPerSimulation), Double.toString((double) KicksMade[3]/gamesPerSimulation), Double.toString((double) KicksGotten[3]/gamesPerSimulation), Double.toString((double) TokensSetToWin[3]/gamesPerSimulation)});
+        rowID++;
     }
+
 
     public static void printStats() {
         System.out.println("Roundlength = " + round / 4 / 1000);

@@ -50,8 +50,8 @@ public class MoveFirstStrategy extends AbstractPlayer {
 				} catch (IAmSureThisWillNotHappenException e) {
 					e.printStackTrace();
 				}
+				Game2.TokensSetToWin[this.id]++;
 				gameField.setInWinBase(tempToken, diceNumber);
-				Game2.TokensSetToWin[id]++;
 				diceCount++;
 				continue;
 			}
@@ -75,7 +75,8 @@ public class MoveFirstStrategy extends AbstractPlayer {
 			diceCount++;
 			// Bedingung um nochmal zu w?rfeln
 		}while(diceNumber == 6 || (this.tokenAtHome() == (4 - this.tokenInWinSpot()) && diceCount < 3));
-
+		//System.out.println("Spieler "+this.id+"| Game "+Game2.game+"| Zug:"+Game2.zuge[this.id]);
+		Game2.zuge[this.id]++;
 		printTokenPosition();
 	}
 }

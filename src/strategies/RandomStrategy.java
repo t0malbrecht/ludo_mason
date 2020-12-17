@@ -56,7 +56,7 @@ public class RandomStrategy extends AbstractPlayer {
                         e.printStackTrace();
                     }
                     gameField.setInWinBase(tempToken, diceNumber);
-                    Game2.TokensSetToWin[id]++;
+                    Game2.TokensSetToWin[this.id]++;
                     diceCount++;
                     continue;
                 } else if (rnd == 3) {
@@ -68,7 +68,8 @@ public class RandomStrategy extends AbstractPlayer {
             diceCount++;
 
         } while (diceNumber == 6 || (this.tokenAtHome() == (4 - this.tokenInWinSpot()) && diceCount < 3));
-
+        //System.out.println("Spieler "+this.id+"| Game "+Game2.game+"| Zug:"+Game2.zuge[this.id]);
+        Game2.zuge[this.id]++;
         printTokenPosition();
     }
 }

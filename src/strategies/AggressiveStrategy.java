@@ -24,14 +24,13 @@ public class AggressiveStrategy extends AbstractPlayer {
 
 	public void turn(){
 		printTokenPosition();
-		Game2.round++;
 		Token tempToken = null;
 		int diceCount = 0;
 		int diceNumber = 0;
 		do {
 			if(game2.end)
 				return;
-			
+
 			// W�rfeln
 			diceNumber = rollDice();
 			diceCount++;
@@ -85,8 +84,8 @@ public class AggressiveStrategy extends AbstractPlayer {
 				} catch (IAmSureThisWillNotHappenException e) {
 					e.printStackTrace();
 				}
+				Game2.TokensSetToWin[this.id]++;
 				gameField.setInWinBase(tempToken, diceNumber);
-				Game2.TokensSetToWin[id]++;
 				continue;
 			}
 			
@@ -104,6 +103,8 @@ public class AggressiveStrategy extends AbstractPlayer {
 
 		}while(diceNumber == 6 || (this.tokenAtHome() == (4 - this.tokenInWinSpot()) && diceCount < 3));
 		printTokenPosition();
+		//System.out.println("Spieler "+this.id+"| Game "+Game2.game+"| Zug:"+Game2.zuge[this.id]);
+		Game2.zuge[this.id]++;
 	}
 	
 	

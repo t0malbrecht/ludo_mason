@@ -22,7 +22,7 @@ public class Token {
 	
 	/**
 	 * Konstruktor einer Spielerfigur.
-	 * @param id: Spielerid zur Anzeige und Prüfung
+	 * @param id: Spielerid zur Anzeige und Prï¿½fung
 	 * @param startPos: Startposition einer Spielerfigur
 	 * @param winPos: Gewinnposition einer Spielerfigur
 	 */
@@ -44,7 +44,7 @@ public class Token {
 	public void kick(Token token) {
 		this.pos = -1;
 		setHome(true);
-		player.game2.KicksGotten[id]++;
+		player.game2.KicksGotten[this.id]++;
 		player.game2.KicksMade[token.player.id]++;
 	}
 	
@@ -58,7 +58,7 @@ public class Token {
 	}
 	
 	/**
-	 * Spielfigur läuft in das Ziel ein.
+	 * Spielfigur lï¿½uft in das Ziel ein.
 	 */
 	public void tokenWin() {
 		//System.out.println("Player: "+player.id+" | Token im Ziel");
@@ -117,7 +117,7 @@ public class Token {
 	}
 	
 	/**
-	 * Deklaration zur Rückkehr oder Abkehr aus dem Starthaus.
+	 * Deklaration zur Rï¿½ckkehr oder Abkehr aus dem Starthaus.
 	 * @param value: Boolean
 	 */
 	public void setHome(boolean value) {

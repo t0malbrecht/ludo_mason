@@ -258,7 +258,7 @@ public abstract class AbstractPlayer implements Steppable {
      */
     public void checkWin() {
         if (tokenInWinSpot() == 4 && game2.end == false) {
-            game2.winsOfPlayer[id]++;
+            game2.winsOfPlayer[this.id]++;
             game2.gameFinish();
         }
     }
