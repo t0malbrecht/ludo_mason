@@ -20,7 +20,7 @@ import java.util.Arrays;
                             .withHeader("KombinationsID", "Position", "Strategie", "Gewinne", "Zuge", "Hat_Gekickt", "Wurde_Gekickt", "Token_in_Winspot_gesetzt"));
             ) {
                 for (String[] rowItem : Game2.rowItems) {
-                    csvPrinter.printRecord(rowItem[0], rowItem[1], rowItem[2], rowItem[3], rowItem[4], rowItem[5], rowItem[6]);
+                    csvPrinter.printRecord(rowItem[0], rowItem[1], rowItem[2], rowItem[3], rowItem[4], rowItem[5], rowItem[6], rowItem[7]);
                 }
 
                 csvPrinter.flush();

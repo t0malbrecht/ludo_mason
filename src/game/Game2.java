@@ -36,7 +36,7 @@ public class Game2 extends SimState {
 
     static {
         try {
-            classes = new Class[]{Class.forName("strategies.DefensiveStrategy"), Class.forName("strategies.MixedStrategy"), Class.forName("strategies.MoveFirstStrategy"), Class.forName("strategies.MoveLastStrategy"), Class.forName("strategies.RandomStrategy"), Class.forName("strategies.DefensiveStrategy")};
+            classes = new Class[]{Class.forName("strategies.DefensiveStrategy"), Class.forName("strategies.MixedStrategy"), Class.forName("strategies.MoveFirstStrategy"), Class.forName("strategies.MoveLastStrategy"), Class.forName("strategies.RandomStrategy"), Class.forName("strategies.AggressiveStrategy")};
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

@@ -46,6 +46,11 @@ public class AggressiveStrategy extends AbstractPlayer {
 				getTokenAtHome().out();
 				continue;
 			}
+
+			if(avaibleOptions.contains(3)){
+				gameField.moveInWinBase(avaibleTokensMoveWinBase.get(0), diceNumber);
+				continue;
+			}
 			
 			// Aggressive Spielart - Sobald der Spielstein bei einem Gegner ist oder dieser maximal 5 Schritte davon entfernt ist.
 			if(avaibleOptions.contains(4)) {
@@ -82,11 +87,6 @@ public class AggressiveStrategy extends AbstractPlayer {
 				}
 				gameField.setInWinBase(tempToken, diceNumber);
 				Game2.TokensSetToWin[id]++;
-				continue;
-			}
-			
-			if(avaibleOptions.contains(3)){
-				gameField.moveInWinBase(avaibleTokensMoveWinBase.get(0), diceNumber);
 				continue;
 			}
 			
