@@ -37,7 +37,7 @@ public class Game2 extends SimState {
 
     static {
         try {
-            classes = new Class[]{Class.forName("strategies.DefensiveStrategy"), Class.forName("strategies.DefensiveStrategy"), Class.forName("strategies.MoveFirstStrategy"), Class.forName("strategies.MoveLastStrategy"), Class.forName("strategies.RandomStrategy"), Class.forName("strategies.AggressiveStrategy")};
+            classes = new Class[]{Class.forName("strategies.DefensiveStrategy"), Class.forName("strategies.MixedStrategy"), Class.forName("strategies.MoveFirstStrategy"), Class.forName("strategies.MoveLastStrategy"), Class.forName("strategies.RandomStrategy"), Class.forName("strategies.AggressiveStrategy")};
             //classes = new Class[]{Class.forName("strategies.DefensiveStrategy"), Class.forName("strategies.AggressiveStrategy"), Class.forName("strategies.MoveFirstStrategy"), Class.forName("strategies.AggressiveStrategy"), Class.forName("strategies.AggressiveStrategy"), Class.forName("strategies.AggressiveStrategy")};
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -144,8 +144,8 @@ public class Game2 extends SimState {
     }
 
     public static void setRowItems() {
-        rowID++;
         rowItems.add(new String[]{Integer.toString(rowID), Integer.toString(strategyRound), "Player 1", classes[combinations.get(strategyRound)[0]].getName(), Integer.toString(winsOfPlayer[0]), Integer.toString(zuge[0]/gamesPerSimulation), Double.toString((double) KicksMade[0]/gamesPerSimulation), Double.toString((double) KicksGotten[0]/gamesPerSimulation), Double.toString((double) TokensSetToWin[0]/gamesPerSimulation)});
+        rowID++;
         rowItems.add(new String[]{Integer.toString(rowID), Integer.toString(strategyRound), "Player 2", classes[combinations.get(strategyRound)[1]].getName(), Integer.toString(winsOfPlayer[1]), Integer.toString(zuge[1]/gamesPerSimulation), Double.toString((double) KicksMade[1]/gamesPerSimulation), Double.toString((double) KicksGotten[1]/gamesPerSimulation), Double.toString((double) TokensSetToWin[1]/gamesPerSimulation)});
         rowID++;
         rowItems.add(new String[]{Integer.toString(rowID), Integer.toString(strategyRound), "Player 3", classes[combinations.get(strategyRound)[2]].getName(), Integer.toString(winsOfPlayer[2]), Integer.toString(zuge[2]/gamesPerSimulation), Double.toString((double) KicksMade[2]/gamesPerSimulation), Double.toString((double) KicksGotten[2]/gamesPerSimulation), Double.toString((double) TokensSetToWin[2]/gamesPerSimulation)});
