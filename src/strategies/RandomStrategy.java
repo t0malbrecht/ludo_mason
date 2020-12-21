@@ -35,12 +35,20 @@ public class RandomStrategy extends AbstractPlayer {
                 diceCount++;
                 continue;
             }
-            for (int i = 0; i < avaibleOptions.size(); i++) {
-                if (avaibleOptions.get(i) == 0) {
-                    avaibleOptions.remove(i);
-                }
+
+            if(avaibleOptions.contains(3)){
+                game2.gamefield.moveInWinBase(avaibleTokensInWinBase.get(0), diceNumber);
+                continue;
             }
+
             if(avaibleOptions.size() > 0) {
+
+                for (int i = 0; i < avaibleOptions.size(); i++) {
+                    if (avaibleOptions.get(i) == 0 && avaibleOptions.get(i) == 4 && avaibleOptions.get(i) == 5) {
+                        avaibleOptions.remove(i);
+                    }
+                }
+
                 Integer rnd = avaibleOptions.get(new Random().nextInt(avaibleOptions.size()));
                 if (rnd == 1) {
                     game2.gamefield.setTokenToField(avaibleTokesOnField.get(new Random().nextInt(avaibleTokesOnField.size())), diceNumber);
@@ -56,10 +64,6 @@ public class RandomStrategy extends AbstractPlayer {
                     }
                     game2.gamefield.setInWinBase(tempToken, diceNumber);
                     Game2.TokensSetToWin[this.id]++;
-                    diceCount++;
-                    continue;
-                } else if (rnd == 3) {
-                    game2.gamefield.moveInWinBase(avaibleTokensInWinBase.get(0), diceNumber);
                     diceCount++;
                     continue;
                 }
