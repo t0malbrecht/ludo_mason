@@ -43,11 +43,10 @@ public class RandomStrategy extends AbstractPlayer {
 
             if(avaibleOptions.size() > 0) {
 
-                for (int i = 0; i < avaibleOptions.size(); i++) {
-                    if (avaibleOptions.get(i) == 0 && avaibleOptions.get(i) == 4 && avaibleOptions.get(i) == 5) {
-                        avaibleOptions.remove(i);
-                    }
-                }
+                avaibleOptions.removeIf(obj -> obj == 0);
+                avaibleOptions.removeIf(obj -> obj == 3);
+                avaibleOptions.removeIf(obj -> obj == 4);
+                avaibleOptions.removeIf(obj -> obj == 5);
 
                 Integer rnd = avaibleOptions.get(new Random().nextInt(avaibleOptions.size()));
                 if (rnd == 1) {
