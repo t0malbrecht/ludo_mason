@@ -16,6 +16,7 @@ public class Game2 extends SimState {
     private static final long serialVersionUID = 1;
 
     private AbstractPlayer[] players = new AbstractPlayer[4];
+    public GameField gamefield = new GameField();
     public boolean end = false;
     public MersenneTwisterFast generator;
 
@@ -86,14 +87,14 @@ public class Game2 extends SimState {
         AbstractPlayer player4 = null;
 
         try {
-            Constructor constructorPlayer1 = classes[combinations.get(strategyRound)[0]].getDeclaredConstructor(int.class, int.class, GameField.class, Game2.class, Token[].class, ArrayList.class);
-            Constructor constructorPlayer2 = classes[combinations.get(strategyRound)[1]].getDeclaredConstructor(int.class, int.class, GameField.class, Game2.class, Token[].class, ArrayList.class);
-            Constructor constructorPlayer3 = classes[combinations.get(strategyRound)[2]].getDeclaredConstructor(int.class, int.class, GameField.class, Game2.class, Token[].class, ArrayList.class);
-            Constructor constructorPlayer4 = classes[combinations.get(strategyRound)[3]].getDeclaredConstructor(int.class, int.class, GameField.class, Game2.class, Token[].class, ArrayList.class);
-            player1 = (AbstractPlayer) constructorPlayer1.newInstance(0, 0, gameField, this, null, null);
-            player2 = (AbstractPlayer) constructorPlayer2.newInstance(1, 10, gameField, this, null, null);
-            player3 = (AbstractPlayer) constructorPlayer3.newInstance(2, 20, gameField, this, null, null);
-            player4 = (AbstractPlayer) constructorPlayer4.newInstance(3, 30, gameField, this, null, null);
+            Constructor constructorPlayer1 = classes[combinations.get(strategyRound)[0]].getDeclaredConstructor(int.class, int.class, Game2.class, Token[].class, ArrayList.class);
+            Constructor constructorPlayer2 = classes[combinations.get(strategyRound)[1]].getDeclaredConstructor(int.class, int.class, Game2.class, Token[].class, ArrayList.class);
+            Constructor constructorPlayer3 = classes[combinations.get(strategyRound)[2]].getDeclaredConstructor(int.class, int.class, Game2.class, Token[].class, ArrayList.class);
+            Constructor constructorPlayer4 = classes[combinations.get(strategyRound)[3]].getDeclaredConstructor(int.class, int.class, Game2.class, Token[].class, ArrayList.class);
+            player1 = (AbstractPlayer) constructorPlayer1.newInstance(0, 0, this, null, null);
+            player2 = (AbstractPlayer) constructorPlayer2.newInstance(1, 10, this, null, null);
+            player3 = (AbstractPlayer) constructorPlayer3.newInstance(2, 20, this, null, null);
+            player4 = (AbstractPlayer) constructorPlayer4.newInstance(3, 30, this, null, null);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -108,7 +109,6 @@ public class Game2 extends SimState {
         players[1] = player2;
         players[2] = player3;
         players[3] = player4;
-        gameField.setPlayers(players);
 
         schedule.scheduleRepeating(player1, 0, 1.0);
         schedule.scheduleRepeating(player2, 1, 1.0);
@@ -143,7 +143,7 @@ public class Game2 extends SimState {
         super.finish();
     }
 
-    public static void setRowItems() {
+    public void setRowItems() {
         rowItems.add(new String[]{Integer.toString(rowID), Integer.toString(strategyRound), "Player 1", classes[combinations.get(strategyRound)[0]].getName(), Integer.toString(winsOfPlayer[0]), Integer.toString(zuge[0]/gamesPerSimulation), Double.toString((double) KicksMade[0]/gamesPerSimulation), Double.toString((double) KicksGotten[0]/gamesPerSimulation), Double.toString((double) TokensSetToWin[0]/gamesPerSimulation)});
         rowID++;
         rowItems.add(new String[]{Integer.toString(rowID), Integer.toString(strategyRound), "Player 2", classes[combinations.get(strategyRound)[1]].getName(), Integer.toString(winsOfPlayer[1]), Integer.toString(zuge[1]/gamesPerSimulation), Double.toString((double) KicksMade[1]/gamesPerSimulation), Double.toString((double) KicksGotten[1]/gamesPerSimulation), Double.toString((double) TokensSetToWin[1]/gamesPerSimulation)});

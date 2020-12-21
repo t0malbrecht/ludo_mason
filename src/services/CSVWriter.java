@@ -10,11 +10,11 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
     public class CSVWriter {
-        private static final String SAMPLE_CSV_FILE = "./results.csv";
+        private static final String FILE_NAME = "./results.csv";
 
         public static void print() throws IOException {
             try (
-                    BufferedWriter writer = Files.newBufferedWriter(Paths.get(SAMPLE_CSV_FILE));
+                    BufferedWriter writer = Files.newBufferedWriter(Paths.get(FILE_NAME));
 
                     CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
                             .withHeader("ID", "KombinationsID", "Position", "Strategie", "Gewinne", "Zuge", "Hat_Gekickt", "Wurde_Gekickt", "Token_in_Winspot_gesetzt"));

@@ -3,153 +3,67 @@ package game;
 public class Token {
 	
 	// properties
-	private final int id;
-	private final int startPos;
-	private final int winPos;
-	private Integer pos;
-	private boolean isHome;
-	private boolean inWinSpot;
+	public Integer position;
+	public boolean isHome;
+	public boolean inWinSpot;
 	public AbstractPlayer player;
-	public GameField gameField; // create methods for stepsToEnemy and stepsFromEnemy
 	public int stepsToEnemy;
 	public int stepsFromEnemy;
 	public Integer stepsToWinBase;
 	public Integer canGoInWinBaseWith;
 	public boolean canHitOtherToken;
-	public boolean itsNearByEnemies;
-	public Integer stepsToUnfriendlyToken;
-
+	public boolean isCloseToEnemies;
 	
 	/**
 	 * Konstruktor einer Spielerfigur.
-	 * @param id: Spielerid zur Anzeige und Pr�fung
-	 * @param startPos: Startposition einer Spielerfigur
-	 * @param winPos: Gewinnposition einer Spielerfigur
 	 */
-	public Token(int id, int startPos, int winPos, AbstractPlayer player) {
-		this.id = id;
-		this.pos = -2;
-		this.startPos = startPos;
-		this.winPos = winPos;
+	public Token(AbstractPlayer player) {
+		this.position = -2;
 		this.isHome = true;
 		this.player = player;
 		this.canGoInWinBaseWith = 0;
 		this.canHitOtherToken = true;
-		this.itsNearByEnemies = false;
+		this.isCloseToEnemies = false;
 	}
 	
 	/**
 	 * Wird vom Spielfeld entfernt.
 	 */
-	public void kick(Token token) {
-		this.pos = -1;
-		setHome(true);
-		player.game2.KicksGotten[this.id]++;
-		player.game2.KicksMade[token.player.id]++;
+	public void gotKicked(Token kickedBy) {
+		setHome();
+		Game2.KicksGotten[this.player.id]++;
+		Game2.KicksMade[kickedBy.player.id]++;
 	}
 	
 	/**
 	 * Wird auf das Spielfeld gesetzt.
 	 */
-	public void out() {
-		setHome(false);
-		//System.out.println("Startpos:"+startPos+"_Player:"+player.id);
-		updatePos(startPos);
+	public void setOnField() {
+		this.isHome = false;
+		this.position = this.player.startPos;
 	}
 	
 	/**
 	 * Spielfigur l�uft in das Ziel ein.
 	 */
-	public void tokenWin() {
-		//System.out.println("Player: "+player.id+" | Token im Ziel");
+	public void setInWinspot() {
 		this.inWinSpot = true;
 		this.canGoInWinBaseWith = 0;
-		this.updatePos(-1);
-		this.player.checkWin();
-	}
-	
-	/**
-	 * Spielfigur-Position wird aktualisiert.
-	 * @param newPos: Neue Position
-	 */
-	public void updatePos (int newPos) {
-		this.pos = newPos;
-	}
-	
-	/**
-	 * Liefert die gesetzte Startposition.
-	 * @return: Startposition
-	 */
-	public int getStartPos() {
-		return startPos;
-	}
-	
-	/**
-	 * Liefert die gesetzte Gewinnposition.
-	 * @return: Gewinnposition
-	 */
-	public int getWinPos() {
-		return winPos;
-	}
-	
-	/**
-	 * Liefert die aktuelle Position der Spielfigur.
-	 * @return: Aktuelle Position
-	 */
-	public Integer getPos () {
-		return pos;
+		this.position = -1;
+		this.player.checkWinningCondition();
 	}
 
 	/**
-	 * Liefert die aktuelle Entfernung der Spielfigur zur Winbasis.
-	 * @return: Aktuelle Position
+	 * Deklaration zur R�ckkehr in das Starthaus.
 	 */
+	public void setHome() {
+		this.position = -1;
+		this.isHome = true;
+	}
+
+	public boolean isOnStartspot() { return position == this.player.startPos;}
+
 	public Integer getStepsToWinBase () {
 		return stepsToWinBase;
 	}
-	
-	/**
-	 * Liefert die gesetzte Spieler-ID.
-	 * @return: ID des Spielers
-	 */
-	public int getId() {
-		return id;
-	}
-	
-	/**
-	 * Deklaration zur R�ckkehr oder Abkehr aus dem Starthaus.
-	 * @param value: Boolean
-	 */
-	public void setHome(boolean value) {
-		if(!value) {
-			this.updatePos(startPos);
-		} else {
-			this.updatePos(-1);
-		}
-		this.isHome = value;
-	}
-	
-	/**
-	 * Gibt an, ob die Spielerfigur sich im Starthaus befindet.
-	 * @return Boolean
-	 */
-	public boolean isHome() {
-		return isHome;
-	}
-
-	public boolean isOnStartspot() { return pos == startPos;}
-	
-	/**
-	 * Gibt an, ob die Spielerfigur sich im Zielhaus befindet.
-	 * @return Boolean
-	 */
-	public boolean isInWinSpot() {
-		return inWinSpot;
-	}
-
-	public int getStepsToEnemy() { return stepsToEnemy; }
-
-	public int getStepsFromEnemy() { return stepsFromEnemy; }
-
-
 }

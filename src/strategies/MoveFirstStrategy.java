@@ -18,12 +18,11 @@ public class MoveFirstStrategy extends AbstractPlayer {
 	 * @param identifier
 	 * @param startPos
 	 */
-	public MoveFirstStrategy(int identifier, int startPos, GameField gameField, Game2 game2, Token[] winSpots, ArrayList<Token> tokens) {
-		super(identifier, startPos, gameField, game2, winSpots, tokens);
+	public MoveFirstStrategy(int identifier, int startPos, Game2 game2, Token[] winSpots, ArrayList<Token> tokens) {
+		super(identifier, startPos, game2, winSpots, tokens);
 	}
 
 	public void turn(){
-		printTokenPosition();
 		Game2.round++;
 		int diceCount = 0;
 		int diceNumber = 0;
@@ -31,14 +30,14 @@ public class MoveFirstStrategy extends AbstractPlayer {
 			if(game2.end)
 				return;
 			diceNumber = rollDice();
-			if(tokenOnStartspot()){
-				gameField.setTokenToField (getTokenOnStartspot(), diceNumber);
+			if(isAnyTokenOnStartspot()){
+				game2.gamefield.setTokenToField (getTokenOnStartspot(), diceNumber);
 				diceCount++;
 				continue;
 			}
 			ArrayList<Integer> avaibleOptions = getAvaiableOptions(diceNumber);
 			if(avaibleOptions.contains(0) && diceNumber == 6){ //Pflicht bei 6 raussetzen
-				getTokenAtHome().out();
+				getOneTokenAtHome().setOnField();
 				diceCount++;
 				continue;
 			}
@@ -46,37 +45,36 @@ public class MoveFirstStrategy extends AbstractPlayer {
 				Token tempToken = null;
 				try {
 					int finalDiceNumber = diceNumber;
-					tempToken = getFieldToken(false).stream().filter(o -> o.canGoInWinBaseWith == finalDiceNumber).findFirst().orElseThrow(IAmSureThisWillNotHappenException::new);
+					tempToken = getAllTokenOnField(false).stream().filter(o -> o.canGoInWinBaseWith == finalDiceNumber).findFirst().orElseThrow(IAmSureThisWillNotHappenException::new);
 				} catch (IAmSureThisWillNotHappenException e) {
 					e.printStackTrace();
 				}
 				Game2.TokensSetToWin[this.id]++;
-				gameField.setInWinBase(tempToken, diceNumber);
+				game2.gamefield.setInWinBase(tempToken, diceNumber);
 				diceCount++;
 				continue;
 			}
 			if(avaibleOptions.contains(3)){
-				gameField.moveInWinBase(avaibleTokensMoveWinBase.get(0), diceNumber);
+				game2.gamefield.moveInWinBase(avaibleTokensInWinBase.get(0), diceNumber);
 				diceCount++;
 				continue;
 			}
 			if(avaibleOptions.contains(1)){
-				ArrayList<Token> sortedTokens = avaibleTokes;
+				ArrayList<Token> sortedTokens = avaibleTokesOnField;
 				int finalDiceNumber1 = diceNumber;
 				sortedTokens.removeIf(obj -> obj.stepsToWinBase - finalDiceNumber1 < 0);
 				Collections.sort(sortedTokens,
 						Comparator.comparing(Token::getStepsToWinBase));
-				if(sortedTokens.size() > 0 && gameField != null){
-					gameField.setTokenToField(sortedTokens.get(0), diceNumber);
+				if(sortedTokens.size() > 0 && game2.gamefield != null){
+					game2.gamefield.setTokenToField(sortedTokens.get(0), diceNumber);
 				}
 				diceCount++;
 				continue;
 			}
 			diceCount++;
 			// Bedingung um nochmal zu w?rfeln
-		}while(diceNumber == 6 || (this.tokenAtHome() == (4 - this.tokenInWinSpot()) && diceCount < 3));
+		}while(diceNumber == 6 || (this.getAmountOfTokenAtHome() == (4 - this.getAmountOfTokenInWinSpot()) && diceCount < 3));
 		//System.out.println("Spieler "+this.id+"| Game "+Game2.game+"| Zug:"+Game2.zuge[this.id]);
 		Game2.zuge[this.id]++;
-		printTokenPosition();
 	}
 }
