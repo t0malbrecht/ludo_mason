@@ -65,7 +65,6 @@ public class Game2 extends SimState {
     }
 
     public void resetGame() {
-        this.end = false;
         round = 0;
         zuge = new int[] {0, 0, 0, 0};
         winsOfPlayer = new int[] {0, 0, 0, 0};
@@ -76,6 +75,7 @@ public class Game2 extends SimState {
 
     @Override
     public void start() {
+        this.end = false;
         game++;
         super.start();
         GameField gameField = new GameField();
@@ -118,6 +118,7 @@ public class Game2 extends SimState {
     }
 
     public void gameFinish() {
+        this.end = true;
         if (workedGames.contains(game))
             return;
         workedGames.add(game);
