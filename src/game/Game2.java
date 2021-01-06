@@ -30,7 +30,7 @@ public class Game2 extends SimState {
     public static int[] TokensSetToWin = {0, 0, 0, 0};
     public static ArrayList<String[]> rowItems = new ArrayList<>();
     public static ArrayList<Integer> workedGames = new ArrayList<>();
-    public static int gamesPerSimulation = 10;
+    public static int gamesPerSimulation = 5000;
     public static int rowID = 0;
 
     //strategy simulation run
@@ -126,9 +126,9 @@ public class Game2 extends SimState {
             setRowItems();
             strategyRound++;
             resetGame();
-            //printStats();
+            System.out.println(game);
         }
-        if (game == 12960) {
+        if (game == 6480000) {
             try {
                 CSVWriter.print();
             } catch (IOException e) {
