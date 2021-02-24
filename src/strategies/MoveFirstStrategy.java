@@ -23,7 +23,6 @@ public class MoveFirstStrategy extends AbstractPlayer {
 	}
 
 	public void turn(){
-		Game2.round++;
 		int diceCount = 0;
 		int diceNumber = 0;
 		do {

@@ -9,8 +9,6 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Set;
-import java.util.concurrent.locks.Lock;
 
 public class Game2 extends SimState {
     private static final long serialVersionUID = 1;
@@ -20,8 +18,6 @@ public class Game2 extends SimState {
     public boolean end = false;
     public MersenneTwisterFast generator;
 
-    //stats
-    public static int round = 0;
     public static int[] zuge = {0, 0, 0, 0};
     public static int game = 0;
     public static int[] winsOfPlayer = {0, 0, 0, 0};
@@ -30,7 +26,7 @@ public class Game2 extends SimState {
     public static int[] TokensSetToWin = {0, 0, 0, 0};
     public static ArrayList<String[]> rowItems = new ArrayList<>();
     public static ArrayList<Integer> workedGames = new ArrayList<>();
-    public static int gamesPerSimulation = 5000;
+    public static int gamesPerSimulation = 10000;
     public static int rowID = 0;
 
     //strategy simulation run
@@ -48,29 +44,18 @@ public class Game2 extends SimState {
     public static ArrayList<int[]> combinations = Combinations.getCombinations();
     public static int strategyRound = 0;
 
-
-    /**
-     * Desired actions from the user.  Presently only actions[0] used.
-     */
-    public int[] actions;
-
-    /** The current Round.  */
-
-    /**
-     * Creates a PacMan simulation with the given random number seed.
-     */
     public Game2(long seed) {
         super(seed);
         this.generator = new MersenneTwisterFast(seed);
     }
 
     public void resetGame() {
-        round = 0;
         zuge = new int[] {0, 0, 0, 0};
         winsOfPlayer = new int[] {0, 0, 0, 0};
         KicksGotten = new int[] {0, 0, 0, 0};
         KicksMade = new int[] {0, 0, 0, 0};
         TokensSetToWin = new int[] {0, 0, 0, 0};
+        workedGames = new ArrayList<>();
     }
 
     @Override
@@ -125,15 +110,14 @@ public class Game2 extends SimState {
         if ((game % gamesPerSimulation) == 0) {
             setRowItems();
             strategyRound++;
-            resetGame();
             System.out.println(game);
-        }
-        if (game == 6480000) {
+            resetGame();
             try {
                 CSVWriter.print();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            rowItems.clear();
         }
         this.finish();
     }
@@ -157,7 +141,6 @@ public class Game2 extends SimState {
 
 
     public static void printStats() {
-        System.out.println("Roundlength = " + round / 4 / 1000);
         System.out.println("Player 1:" + winsOfPlayer[0] + " Wins");
         System.out.println("Player 1_KicksGotten:" + KicksGotten[0] + " KicksMade:" + KicksMade[0] + " TokenSetToWin:" + TokensSetToWin[0]);
         System.out.println("Player 2:" + winsOfPlayer[1] + " Wins");

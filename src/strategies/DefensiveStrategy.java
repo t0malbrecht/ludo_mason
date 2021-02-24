@@ -18,7 +18,6 @@ public class DefensiveStrategy extends AbstractPlayer {
 
     @Override
     public void turn(){
-        Game2.round++;
         int diceCount = 0; // number of
         int diceNumber = 0; // Zahl auf dem Würfel
         do {
